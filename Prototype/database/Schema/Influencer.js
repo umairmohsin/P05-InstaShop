@@ -1,0 +1,44 @@
+const mongoose = require('mongoose')
+
+const influencerSchema = new mongoose.Schema({
+    role: {
+        type: String,
+        required: true
+    },
+    name: {
+        type: String,
+        required: true
+    },
+    category: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true,
+        minlength: 10,
+        lowercase: true
+    },
+    startDate: {
+        type: Date,
+        required: true
+    },
+    country: {
+        type: String,
+        required: true
+    },
+    zipcode: {
+        type: Number,
+        required: true
+    },
+    address: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true
+    }
+})
+
+module.exports = mongoose.model('Influencer', influencerSchema)
