@@ -12,10 +12,14 @@ async function login(req, res){
         })
         if (user.password === req.body.password){
             const token = createToken(req.body.email+"|"+ user.role)
+            
             res.cookie("jwt", token, {httpOnly:true, sameSite:true})
-            const name = ""
-            if (role == "Influencer") {
-                name = user.name
+            
+            let name = ""
+            
+            if (role == "client") {
+                
+                name = user.name.first
             } else {
                 name = user.name.first
             }
@@ -25,10 +29,14 @@ async function login(req, res){
             })
         } else {
             res.status(401).send()
+            // console.log("andar")
         }
+        console.log(user)
+        console.log(role)
     }
     catch {
         res.status(401).send()
+        // console.log("bahar")
     }
 }
 

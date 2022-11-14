@@ -1,22 +1,26 @@
 import React, { useState } from 'react'
 import {useNavigate} from 'react-router-dom';
 import './announce.css'
+import axios from 'axios'
+
 
 const Announce = ()=>{
+  const navigate = useNavigate()
   const [title, settitle] = useState("")
   const [receipient, setreceipient] = useState("")
   const [content, setcontent] = useState("")
-  const [allEntry,setAllentry] = useState([])
-  const announcedata = (e)=>{
+  // const [allEntry,setAllentry] = useState([])
+  const announcedata = async (e)=>{
     e.preventDefault()
     const newEntry = {
       title: title,
       receipient: receipient,
       content: content
     }
-    setAllentry([...allEntry, newEntry])
+    // setAllentry([...allEntry, newEntry])
     console.log(newEntry)
     console.log("hello")
+    const s = await axios.post('http://localhost:8000/admin/createAnnouncement', newEntry).then(navigate('/login')).catch(err=>console.log(err))
   }
   
   return (

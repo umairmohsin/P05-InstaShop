@@ -6,7 +6,7 @@ const Homepage = () =>{
     return(
         <div>
             <button onClick={()=>navigate("/login")}>Login</button>
-            <button onClick={()=>navigate("/signup")}>signup</button>
+            <button onClick={()=>navigate("/signupopt")}>signup</button>
         </div>
     )
 }
