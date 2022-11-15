@@ -1,0 +1,92 @@
+.editop {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .editoparea {
+    text-align: left;
+    width: 27rem;
+    height: 25rem;
+  }
+  
+  .editopmsg {
+    position: relative;
+    top: 1.75rem;
+    font-family: semibold;
+    color: white;
+    font-size: 0.8rem;
+    opacity: 0.7;
+  }
+  
+  .editoptitle {
+    font-family: semibold;
+    color: white;
+    font-size: 2.4rem;
+  }
+  
+  .editopinput1 {
+    float: left;
+    margin-bottom: 0.625rem;
+    position: relative;
+    background-color: #395B64;
+    height: 2.5rem;
+    width: 48%;
+    color: white;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 0.15rem;
+    font-family: semibold;
+  }
+  
+  .editopinput2 {
+    margin-bottom: 0.625rem;
+    float: right;
+    background-color: #395B64;
+    height: 2.5rem;
+    width: 48%;
+    color: white;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 0.15rem;
+    font-family: semibold;
+  }
+  
+  .editopinputfull {
+    margin-bottom: 0.625rem;
+    position: relative;
+    background-color: #395B64;
+    height: 2.5rem;
+    width: 100%;
+    color: white;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 0.15rem;
+    font-family: semibold;
+  }
+  
+  .editopbuttons {
+    position: relative;
+    margin-top: 0.8rem;
+    background-color: #F47458;
+    height: 2.5rem;
+    width: 100%;
+    color: white;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 0.15rem;
+    font-family: semibold;
+  }
+  
+  @font-face {
+    font-family: "SemiBold";
+    src: local("Poppins-SemiBold"),
+      url("../../../fonts/Poppins-SemiBold.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Regular";
+    src: local("Poppins-Regular"),
+      url("../../../fonts/Poppins-Regular.ttf") format("truetype");
+  }
