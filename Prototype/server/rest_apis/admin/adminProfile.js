@@ -1,20 +1,20 @@
 const sanitize = require('mongo-sanitize')
 const Admin = require('../../database/Schema/Admin')
 
-async function getclientProfile(req, res){
+async function getAdminProfile(req, res){
     try{
         if(res.role === 'Admin'){
-            const client = await Admin.findOne({email: sanitize(req.body.email)})
-            const role   = await Admin.findOne({role: sanitize(req.body.role)})
-            const username = await Admin.findOne({username: sanitize(req.body.username)})
-            const email= await Admin.findOne({email: sanitize(req.body.email)})
+            const admin = await Admin.findOne({email: sanitize(req.body.email)})
+            // const role   = await Admin.findOne({role: sanitize(req.body.role)})
+            // const username = await Admin.findOne({username: sanitize(req.body.username)})
+            // const email= await Admin.findOne({email: sanitize(req.body.email)})
             const toSend = {
                 // return the profile
-                client:client,
-                role:role,
-                username:username,
-                email:email            
-                // name :name,
+                // client:client,
+                role:admin.role,
+                name : `${admin.name.first} ${admin.name.last}`,
+                email:admin.email ,
+                username:admin.username
             }
             res.status(200).json(toSend)
         } else{
@@ -24,5 +24,4 @@ async function getclientProfile(req, res){
         res.status(400).send(err)
     }
 }
-
-module.exports = {getclientProfile}
+module.exports = {getAdminProfile}

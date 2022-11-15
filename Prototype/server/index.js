@@ -12,6 +12,18 @@ connect(uri);
 const {login} = require('./rest_apis/login')
 const {getAnnouncements} = require('./rest_apis/getAnnouncements')
 const {create_announcement} = require('./rest_apis/admin/createAnnouncement')
+const {Signup}  = require('./rest_apis/Signup')
+
+
+//Admin
+const {create_announcement} = require('./rest_apis/admin/createAnnouncement')
+const{getAdminProfile} = require('./rest_apis/admin/adminProfile')
+//Influencer
+const{getInfluencerProfile} = require('./rest_apis/influencer/InfluencerProfile')
+// Client
+const {getclientProfile} = require('./rest_apis/client/clientProfile')
+
+
 
 const PORT = process.env.PORT || 8000
 
@@ -34,10 +46,26 @@ app.get('/getAnnouncements', (authenticateUser), async (req, res) => {
 })
 
 // Admin
-
 app.post('/admin/createAnnouncement', (authenticateUser), async (req, res) => {
     await create_announcement(req, res)
 })
+
+
+// app.get('/getAdminProfile' , (authenticateUser) , async(req,res) =>{
+//     await  getAdminProfile(req, res)    
+// })
+
+
+//Influencer Profile
+// app.get('/getInfluencerProfile' , (authenticateUser) , async(req,res) =>{
+//     await  getInfluencerProfile(req, res)    
+// })
+// //Client Profile
+// app.get('/getclientProfile' , (authenticateUser) , async(req,res) =>{
+//     await  getclientProfile(req, res)    
+// })
+
+
 
 // general
 
