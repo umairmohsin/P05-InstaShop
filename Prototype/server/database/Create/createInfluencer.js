@@ -1,15 +1,17 @@
 const Influencer = require('../Schema/Influencer')
 
-async function createInfluencer(role, name, category, email, startDate, country, zipcode, address, password) {
+async function createInfluencer(role, f_name, l_name, email, dob, username, link, niche, password) {
     const influencer = await Influencer.create({
         role: role,
-        name: name,
-        category: category,
+        name: {
+            first: f_name,
+            last: l_name
+        },
         email: email,
-        startDate: startDate,
-        country: country,
-        zipcode: zipcode,
-        address: address,
+        dob: dob,
+        username: username,
+        profileLink: link,
+        niche: niche,
         password: password
     })
     await influencer.save()

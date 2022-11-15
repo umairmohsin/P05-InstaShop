@@ -6,12 +6,14 @@ const influencerSchema = new mongoose.Schema({
         required: true
     },
     name: {
-        type: String,
-        required: true
-    },
-    category: {
-        type: String,
-        required: true
+        first: {
+            type: String,
+            required: true
+        },
+        last: {
+            type: String,
+            required: true
+        }
     },
     email: {
         type: String,
@@ -19,19 +21,19 @@ const influencerSchema = new mongoose.Schema({
         minlength: 10,
         lowercase: true
     },
-    startDate: {
+    dob: {
         type: Date,
         required: true
     },
-    country: {
+    username: {
         type: String,
         required: true
     },
-    zipcode: {
-        type: Number,
+    profileLink: {
+        type: String,
         required: true
     },
-    address: {
+    niche: {
         type: String,
         required: true
     },
