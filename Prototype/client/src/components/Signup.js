@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Signup.css'
-const Signup = ()=>{
+const SignupInf = ()=>{
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [fName, setFName] = useState("")
@@ -89,4 +89,4 @@ const Signup = ()=>{
         </>
     )
 }
-export default Signup
+export default SignupInf

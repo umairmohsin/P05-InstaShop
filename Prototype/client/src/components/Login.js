@@ -26,7 +26,7 @@ const Login = ()=>{
         // console.log(allEntry)
         console.log("hello")
         console.log(newEntry)
-        const s = await axios.post('http://localhost:8000/login', newEntry).then(navigate('/announce')).catch(err=>console.log(err))
+        const s = await axios.post('http://localhost:8000/login', newEntry).then(navigate('/announce')).catch(err=>console.log("Error"))
         
     }
     return(

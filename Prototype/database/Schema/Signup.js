@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const influencerSchema = new mongoose.Schema({
+const signupSchema = new mongoose.Schema({
     role: {
         type: String,
         required: true
@@ -21,19 +21,7 @@ const influencerSchema = new mongoose.Schema({
         minlength: 10,
         lowercase: true
     },
-    dob: {
-        type: Date,
-        required: true
-    },
     username: {
-        type: String,
-        required: true
-    },
-    profileLink: {
-        type: String,
-        required: true
-    },
-    niche: {
         type: String,
         required: true
     },
@@ -43,4 +31,8 @@ const influencerSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Influencer', influencerSchema)
+module.exports = mongoose.model('Signup', signupSchema)
+
+
+
+

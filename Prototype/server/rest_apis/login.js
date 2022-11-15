@@ -17,8 +17,7 @@ async function login(req, res){
             
             let name = ""
             
-            if (role == "client") {
-                
+            if (role == "influencer") {
                 name = user.name.first
             } else {
                 name = user.name.first
@@ -31,8 +30,8 @@ async function login(req, res){
             res.status(401).send()
             // console.log("andar")
         }
-        console.log(user)
-        console.log(role)
+        // console.log(user)
+        // console.log(role)
     }
     catch {
         res.status(401).send()

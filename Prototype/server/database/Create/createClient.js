@@ -1,16 +1,15 @@
 const Client = require('../Schema/Client')
 
-async function createClient(role, f_name, l_name, email, dob, username, link, password) {
+async function createClient(role, name, category, email, startDate, country, zipcode, address, password) {
     const client = await Client.create({
         role: role,
-        name: {
-            first: f_name,
-            last: l_name
-        },
+        name: name,
+        category: category,
         email: email,
-        dob: dob,
-        username: username,
-        profileLink: link,
+        startDate: startDate,
+        country: country,
+        zipcode: zipcode,
+        address: address,
         password: password
     })
     await client.save()

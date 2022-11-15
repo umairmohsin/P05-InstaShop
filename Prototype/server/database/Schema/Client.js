@@ -6,14 +6,12 @@ const clientSchema = new mongoose.Schema({
         required: true
     },
     name: {
-        first: {
-            type: String,
-            required: true
-        },
-        last: {
-            type: String,
-            required: true
-        }
+        type: String,
+        required: true
+    },
+    category: {
+        type: String,
+        required: true
     },
     email: {
         type: String,
@@ -21,15 +19,19 @@ const clientSchema = new mongoose.Schema({
         minlength: 10,
         lowercase: true
     },
-    dob: {
+    startDate: {
         type: Date,
         required: true
     },
-    username: {
+    country: {
         type: String,
         required: true
     },
-    profileLink: {
+    zipcode: {
+        type: Number,
+        required: true
+    },
+    address: {
         type: String,
         required: true
     },
@@ -38,7 +40,5 @@ const clientSchema = new mongoose.Schema({
         required: true
     }
 })
-
-// console.log("UserT3 collection created")
 
 module.exports = mongoose.model('Client', clientSchema)

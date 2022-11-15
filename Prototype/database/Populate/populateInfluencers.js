@@ -7,15 +7,15 @@ async function populateInfluencers(){
 
     console.log(`Making 'Influencer' entries...`)
 
-    await createInfluencer('Influencer', 'Irfan Junejo', 'Photography', 'irfanjunejo@gmail.com', '2010-03-18', 'Pakistan', 75000, 'North Nazimabad Karachi', influencerPassword)
-
-    await createInfluencer('Influencer', 'Luke Damant', 'Sports', 'lukedamant@gmail.com', '2016-09-12', 'Pakistan', 54000, 'Model Town Lahore', influencerPassword)
-
-    await createInfluencer('Influencer', 'Xeetechcare', 'Electronics', 'xeetechcare@gmail.com', '2018-05-07', 'Pakistan', 54000, 'Johar Town Lahore', influencerPassword)
-
-    await createInfluencer('Influencer', 'Rana Hamza Saif', 'Food', 'rhs@gmail.com', '2016-01-15', 'Pakistan', 54000, 'Bahria Town Lahore', influencerPassword)
-
-    await createInfluencer('Influencer', 'Balarosh', 'Bags', 'balarosh@gmail.com', '2020-06-20', 'Pakistan', 54000, 'DHA Lahore', influencerPassword)
+    await createInfluencer('Influencer', 'Umair', 'Mohsin', 'umair.mohsin@gmail.com', '2000-02-01', 'umair.mohsin', 'www.google.com', 'Shoes', influencerPassword)
+    
+    await createInfluencer('Influencer', 'Farva', 'Talib', 'farva.talib@gmail.com', '2001-07-03', 'farva.talib', 'www.google.com', 'Clothing', influencerPassword)
+    
+    await createInfluencer('Influencer', 'Hassan Ahmad', 'Raza', 'hassan.raza@gmail.com', '1999-04-08', 'hassan.raza' ,'www.google.com', 'Sports' , influencerPassword)
+    
+    await createInfluencer('Influencer', 'Salman', 'Masood', 'salman.masood@gmail.com', '2000-10-11', 'salman.masood', 'www.google.com', 'Food', influencerPassword)
+    
+    await createInfluencer('Influencer', 'Mursal Javed', 'Akhtar', 'mursal.akhtar@gmail.com', '2002-08-24', 'mursal.akhtar' ,'www.google.com', 'Kitchen' , influencerPassword)
 
 }
 
