@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import {useNavigate} from 'react-router-dom';
 import './login.css'
 import axios from 'axios'
+import { Link } from "react-router-dom";
 
 async function hash(string) {
     const utf8 = new TextEncoder().encode(string);
@@ -65,7 +66,9 @@ const Login = ()=>{
         </form>
         <button onClick={login} className='loginbuttons' type='submit'>Sign In</button>
         <p className='loginbottom1'onClick={ChangePassword}>Change Your Password? Reset Here</p>
-        <p className='loginbottom2'onClick={signup}>Don't have an account? Sign Up</p>
+        <p className='loginbottom2'onClick={signup}>Don't have an account? 
+          <Link to='/signup'>Sign Up</Link>
+        </p>
       </div>
     </div>
   );
