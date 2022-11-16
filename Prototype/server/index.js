@@ -12,7 +12,7 @@ connect(uri);
 const {login} = require('./rest_apis/login')
 const {getAnnouncements} = require('./rest_apis/getAnnouncements')
 const {create_announcement} = require('./rest_apis/admin/createAnnouncement')
-const {Signup}  = require('./rest_apis/Signup')
+// const {Signup}  = require('./rest_apis/Signup')
 
 
 //Admin
