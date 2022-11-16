@@ -18,20 +18,18 @@ async function Signup(req, res){
             await createClient(role, fname, lname, email, dob, username, link, niche, password )
             res.status(200).json({
                 // msg: 'Influencer Signup successfully made!',
-                
-                // If createClient returns successfully, why are we sending the whole data of the entity again?
-                
-                role: role,
-                name: {
-                    first: fname,
-                    last: lname
-                },
-                email: email,
-                dob: dob,
-                username: username,
-                profileLink: link,
-                niche: niche,
-                password: password
+                // If createClient returns successfully, why are we sending the whole data of the entity again?  
+                // role: role,
+                // name: {
+                //     first: fname,
+                //     last: lname
+                // },
+                // email: email,
+                // dob: dob,
+                // username: username,
+                // profileLink: link,
+                // niche: niche,
+                // password: password
                 })
         }
 
