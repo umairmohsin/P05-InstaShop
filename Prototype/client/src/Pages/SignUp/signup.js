@@ -2,7 +2,8 @@ import logo from '../../images/logo.png'
 import './signup.css';
 import React, { useState } from 'react'
 import {useNavigate} from 'react-router-dom';
-import axios from 'axios'
+// import axios from 'axios'
+import { Link } from "react-router-dom";
 
 function SignUp() {
   const navigate = useNavigate()
@@ -30,7 +31,9 @@ function SignUp() {
           <input type="radio" value="Endorser" name='mygroup' /> Endorser
         </div>
         <button onClick={signup} className='signupbuttons'>Confirm Choice</button>
-        <p className='signupbottom1'onClick={login}>Already a member? Log In</p>
+        <p className='signupbottom1'onClick={login}>Already a member? 
+          <Link to='/'>Login</Link>
+        </p>
       </div>
     </div>
   );
