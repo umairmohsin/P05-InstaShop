@@ -1,7 +1,10 @@
 import logo from '../../images/logo.png'
 import React, { useState } from 'react'
 import './osignup.css'
+import {useNavigate} from 'react-router-dom';
+import axios from 'axios'
 const Osignup = ()=>{
+  const navigate = useNavigate()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [orgName, setOrgName] = useState("")
@@ -13,7 +16,7 @@ const Osignup = ()=>{
 
   const [allEntry, setAllentry] = useState([])
 
-  const Osignup = (e) =>{
+  const Osignupsend = async (e) =>{
       e.preventDefault()
       const newEntry = {
           email: email,
@@ -25,8 +28,9 @@ const Osignup = ()=>{
           zCode:zCode,
           address:address,
       }
-      setAllentry([...allEntry, newEntry])
-      console.log(allEntry)
+      // setAllentry([...allEntry, newEntry])
+      console.log(newEntry)
+      const s = await axios.post('http://localhost:8000/orgsignup', newEntry).then(navigate('/login')).catch(err=>console.log("Error"))
   }
   return (
     <div className="osignup">
@@ -34,7 +38,7 @@ const Osignup = ()=>{
       <div className='osignuparea'>
         <p className='osignupmsg'>STEP 2 OF 2</p>
         <h1 className='osignuptitle'>Enter Details</h1>
-        <form action='' onSubmit={Osignup}>
+        <form action='' onSubmit={Osignupsend}>
           <label>
             <input name='orgName' id='orgName' value={orgName} onChange={(e)=>setOrgName(e.target.value)} type="text" placeholder='Organization Name' className='osignupinput1'/>
           </label>
@@ -63,7 +67,7 @@ const Osignup = ()=>{
             <input name='password' id='password' value={password} onChange={(e)=>setPassword(e.target.value)} type="password" placeholder='Confirm Password' className='osignupinput2'/>
           </label>
         </form>
-        <button type='submit' className='osignupbuttons'>Confirm Details and Create Account</button>
+        <button onClick={Osignupsend} type='submit' className='osignupbuttons'>Confirm Details and Create Account</button>
         <p className='osignupbottom1'>Already a member? Log In</p>
       </div>
     </div>

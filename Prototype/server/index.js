@@ -16,7 +16,7 @@ const {Signup}  = require('./rest_apis/Signup')
 
 
 //Admin
-const {create_announcement} = require('./rest_apis/admin/createAnnouncement')
+// const {create_announcement} = require('./rest_apis/admin/createAnnouncement')
 const{getAdminProfile} = require('./rest_apis/admin/adminProfile')
 //Influencer
 const{getInfluencerProfile} = require('./rest_apis/influencer/InfluencerProfile')

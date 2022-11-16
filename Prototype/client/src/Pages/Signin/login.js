@@ -2,8 +2,8 @@ import logo from '../../images/logo.png'
 import React, { useState } from 'react'
 import {useNavigate} from 'react-router-dom';
 import './login.css'
-
 import axios from 'axios'
+
 async function hash(string) {
     const utf8 = new TextEncoder().encode(string);
     const hashBuffer = await crypto.subtle.digest('SHA-256', utf8);
@@ -44,7 +44,7 @@ const Login = ()=>{
             <input name='password' id='password' type="password" placeholder='Password' value={password} onChange={(e)=>setPassword(e.target.value)} className='logininput2'/>
           </label>
         </form>
-        <button className='loginbuttons' type='submit'>Sign In</button>
+        <button onClick={login} className='loginbuttons' type='submit'>Sign In</button>
         <p className='loginbottom1'>Forgot Your Password? Reset Here</p>
         <p className='loginbottom2'>Don't have an account? Sign Up</p>
       </div>
