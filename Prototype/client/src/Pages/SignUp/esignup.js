@@ -1,7 +1,10 @@
 import logo from '../../images/logo.png'
 import React, { useState } from 'react'
 import './esignup.css'
+import {useNavigate} from 'react-router-dom';
+import axios from 'axios'
 const Esignup = ()=>{
+    const navigate = useNavigate()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [fName, setFName] = useState("")
@@ -11,7 +14,7 @@ const Esignup = ()=>{
     const [username, setUserName] = useState("")
     const [allEntry, setAllentry] = useState([])
 
-    const Esignup = (e) =>{
+    const Esignupsend = async (e) =>{
         e.preventDefault()
         const newEntry = {
             email: email,
@@ -22,8 +25,9 @@ const Esignup = ()=>{
             LinkTree:LinkTree,
             username:username,
         }
-        setAllentry([...allEntry, newEntry])
-        console.log(allEntry)
+        // setAllentry([...allEntry, newEntry])
+        console.log(newEntry)
+        const s = await axios.post('http://localhost:8000/endsignup', newEntry).then(navigate('/login')).catch(err=>console.log("Error"))
     }
   return (
     <div className="esignup">
@@ -31,7 +35,7 @@ const Esignup = ()=>{
       <div className='esignuparea'>
         <p className='esignupmsg'>STEP 2 OF 2</p>
         <h1 className='esignuptitle'>Enter Details</h1>
-        <form action='' onSubmit={Esignup}>
+        <form action='' onSubmit={Esignupsend}>
           <label>
             <input name='fname' id='fname' value={fName} onChange={(e)=>setFName(e.target.value)} type="text" placeholder='First Name' className='esignupinput1'/>
           </label>
@@ -57,7 +61,7 @@ const Esignup = ()=>{
             <input name='password' id='password' value={password} onChange={(e)=>setPassword(e.target.value)} type="password" placeholder='Confirm Password' className='esignupinput2'/>
           </label>
         </form>
-        <button className='esignupbuttons' type='submit'>Confirm Details and Create Account</button>
+        <button onClick={Esignupsend} className='esignupbuttons' type='submit'>Confirm Details and Create Account</button>
         <p className='esignupbottom1'>Already a member? Log In</p>
       </div>
     </div>
