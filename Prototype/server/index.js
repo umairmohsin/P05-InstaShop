@@ -41,6 +41,10 @@ app.post('/login', async (req, res) => {
     await login(req, res)
 })
 
+app.post('/signup', async (req, res) => {
+    await Signup(req, res)
+})
+
 app.get('/getAnnouncements', (authenticateUser), async (req, res) => {
     await getAnnouncements(req, res)
 })

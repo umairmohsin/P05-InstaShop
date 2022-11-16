@@ -39,7 +39,7 @@ const Osignup = ()=>{
       // setAllentry([...allEntry, newEntry])
       // console.log(newEntry)
       try{
-        await axios.post('http://localhost:8000/orgsignup', newEntry, {withCredentials: true});
+        await axios.post('http://localhost:8000/signup', newEntry, {withCredentials: true});
         navigate('/login')
      }
       catch (err) {
@@ -64,7 +64,7 @@ const Osignup = ()=>{
             <input name='email' id='email' value={email} onChange={(e)=>setEmail(e.target.value)} type="email" placeholder='Email' className='osignupinput1'/>
           </label>
           <label>
-            <input name='year' id='year' value={year} onChange={(e)=>setYear(e.target.value)} type="text" placeholder='Year of Commencement' className='osignupinput2'/>
+            <input name='year' id='year' value={year} onChange={(e)=>setYear(e.target.value)} type="date" placeholder='Year of Commencement' className='osignupinput2'/>
           </label>
           <label>
             <input name='country' id='country' value={country} onChange={(e)=>setCountry(e.target.value)} type="text" placeholder='Country/Region' className='osignupinput1'/>

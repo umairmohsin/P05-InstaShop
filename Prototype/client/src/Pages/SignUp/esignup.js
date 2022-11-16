@@ -23,7 +23,7 @@ const Esignup = ()=>{
         e.preventDefault()
         const newEntry = {
             role: "Influencer",
-            fName:fName,
+            fName: fName,
             lName:lName,
             email: email,
             dob: DOB,
@@ -35,7 +35,7 @@ const Esignup = ()=>{
         // setAllentry([...allEntry, newEntry])
         // console.log(newEntry)
         try{
-          await axios.post('http://localhost:8000/endsignup', newEntry, {withCredentials: true});
+          await axios.post('http://localhost:8000/signup', newEntry, {withCredentials: true});
           navigate('/login')
         }
         catch (err) {
@@ -60,7 +60,7 @@ const Esignup = ()=>{
             <input name='email' id='email' value={email} onChange={(e)=>setEmail(e.target.value)} type="email" placeholder='Email' className='esignupinput1'/>
           </label>
           <label>
-            <input name='DOB' id='DOB' value={DOB} onChange={(e)=>setDOB(e.target.value)} type="text" placeholder='Date of Birth' className='esignupinput2'/>
+            <input name='DOB' id='DOB' value={DOB} onChange={(e)=>setDOB(e.target.value)} type="date" placeholder='Date of Birth' className='esignupinput2'/>
           </label>
           <label>
             <input name='username' id='username' value={username} onChange={(e)=>setUserName(e.target.value)} type="text" placeholder='Username' className='esignupinputfull'/>
