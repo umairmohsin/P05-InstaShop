@@ -16,9 +16,12 @@ function SignUp() {
       navigate("/signupend")
     }
   }
+  const login = () =>{
+    navigate('/login')
+   
+  }
   return (
     <div className="signup">
-      <img className='logo' src={logo} />
       <div className='signuparea'>
         <p className='signupmsg'>STEP 1 OF 2</p>
         <h1 className='signuptitle'>Sign Up as an</h1>
@@ -27,7 +30,7 @@ function SignUp() {
           <input type="radio" value="Endorser" name='mygroup' /> Endorser
         </div>
         <button onClick={signup} className='signupbuttons'>Confirm Choice</button>
-        <p className='signupbottom1'>Already a member? Log In</p>
+        <p className='signupbottom1'onClick={login}>Already a member? Log In</p>
       </div>
     </div>
   );

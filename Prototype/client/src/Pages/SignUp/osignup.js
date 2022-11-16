@@ -16,6 +16,12 @@ const Osignup = ()=>{
 
   const [allEntry, setAllentry] = useState([])
 
+
+  const login = () =>{
+    navigate('/login')
+   
+  }
+
   const Osignupsend = async (e) =>{
       e.preventDefault()
       const newEntry = {
@@ -28,6 +34,7 @@ const Osignup = ()=>{
           zCode:zCode,
           address:address,
       }
+      
       // setAllentry([...allEntry, newEntry])
       console.log(newEntry)
       const s = await axios.post('http://localhost:8000/orgsignup', newEntry).then(navigate('/login')).catch(err=>console.log("Error"))
@@ -68,7 +75,7 @@ const Osignup = ()=>{
           </label>
         </form>
         <button onClick={Osignupsend} type='submit' className='osignupbuttons'>Confirm Details and Create Account</button>
-        <p className='osignupbottom1'>Already a member? Log In</p>
+        <p className='osignupbottom1'onClick={login}>Already a member? Log In</p>
       </div>
     </div>
   );

@@ -19,6 +19,18 @@ const Login = ()=>{
     const [password, setPassword] = useState("")
     const [allEntry, setAllentry] = useState([])
 
+
+
+    const signup = () =>{
+      navigate('/signup')
+     
+    }
+
+    const ChangePassword = () => {
+      navigate('/ChangePass')
+    }
+
+
     const login = async (e) =>{
         e.preventDefault()
         let pw = await hash(password)
@@ -45,8 +57,8 @@ const Login = ()=>{
           </label>
         </form>
         <button onClick={login} className='loginbuttons' type='submit'>Sign In</button>
-        <p className='loginbottom1'>Forgot Your Password? Reset Here</p>
-        <p className='loginbottom2'>Don't have an account? Sign Up</p>
+        <p className='loginbottom1'onClick={ChangePassword}>Change Your Password? Reset Here</p>
+        <p className='loginbottom2'onClick={signup}>Don't have an account? Sign Up</p>
       </div>
     </div>
   );

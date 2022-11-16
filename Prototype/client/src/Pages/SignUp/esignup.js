@@ -14,6 +14,11 @@ const Esignup = ()=>{
     const [username, setUserName] = useState("")
     const [allEntry, setAllentry] = useState([])
 
+    const login = () =>{
+      navigate('/login')
+     
+    }
+
     const Esignupsend = async (e) =>{
         e.preventDefault()
         const newEntry = {
@@ -62,7 +67,7 @@ const Esignup = ()=>{
           </label>
         </form>
         <button onClick={Esignupsend} className='esignupbuttons' type='submit'>Confirm Details and Create Account</button>
-        <p className='esignupbottom1'>Already a member? Log In</p>
+        <p className='esignupbottom1'onClick={login}>Already a member? Log In</p>
       </div>
     </div>
   );
