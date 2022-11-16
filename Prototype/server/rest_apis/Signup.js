@@ -7,10 +7,10 @@ const sanitize = require('mongo-sanitize');
 
 async function Signup(req, res){
     try{
-        if(res.role == 'influencer'){
+        if(req.body.role == 'Influencer'){
             const role = sanitize (req.body.role)
-            const fname = sanitize(req.body.name.f_name)
-            const lname = sanitize(req.body.name.l_name)
+            const fname = sanitize(req.body.name.fName)
+            const lname = sanitize(req.body.name.lName)
             const email = sanitize(req.body.email)
             const dob = sanitize(req.body.dob)
             const username = sanitize(req.body.username)
@@ -18,24 +18,10 @@ async function Signup(req, res){
             const niche = sanitize(req.body.niche)
             const password = sanitize(req.body.password)
             await createInfluencer(role, fname, lname, email, dob, username, link, niche, password )
-            res.status(200).json({
-                msg: 'Influencer Signup successfully made!',
-                // If createClient returns successfully, why are we sending the whole data of the entity again?  
-                // role: role,
-                // name: {
-                //     first: fname,
-                //     last: lname
-                // },
-                // email: email,
-                // dob: dob,
-                // username: username,
-                // profileLink: link,
-                // niche: niche,
-                // password: password
-                })
+            res.status(200).send()
         }
 
-        else if(res.role == 'Client'){
+        else if(req.body.role == 'Client'){
             const role = sanitize (req.body.role)
             const name = sanitize(req.body.name)
             const category = sanitize(req.body.category)
@@ -46,18 +32,7 @@ async function Signup(req, res){
             const address =  sanitize(req.body.address)
             const password = sanitize(req.body.password)
             await createClient(role, name, category, email, startDate, country, zipcode, address, password )
-            res.status(200).json({
-                msg: 'Client Signup successfully made!',                
-                // role: role,
-                // name: name,
-                // category: category,
-                // email: email,
-                // startDate: startDate,
-                // country: country,
-                // zipcode: zipcode,
-                // address: address,
-                // password: password
-                })
+            res.status(200).send()
         }
         else {
             res.status(401).send()

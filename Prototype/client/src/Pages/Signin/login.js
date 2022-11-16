@@ -37,9 +37,16 @@ const Login = ()=>{
         const newEntry = {role: 'admin',email: email, password:pw}
         // setAllentry([...allEntry, newEntry])
         // console.log(allEntry)
-        console.log("hello")
-        console.log(newEntry)
-        const s = await axios.post('http://localhost:8000/login', newEntry).then(navigate('/announce')).catch(err=>console.log("Error"))
+        // console.log("hello")
+        // console.log(newEntry)
+        try{
+          await axios.post('http://localhost:8000/login', newEntry, {withCredentials: true});
+          navigate('/announce')
+        }
+        catch (err) {
+            console.log("ERROR")
+        }
+        // const s = await axios.post('http://localhost:8000/login', newEntry).then(navigate('/announce')).catch(err=>console.log("Error"))
         
     }
   return (

@@ -22,17 +22,26 @@ const Esignup = ()=>{
     const Esignupsend = async (e) =>{
         e.preventDefault()
         const newEntry = {
-            email: email,
-            password:password,
+            role: "Influencer",
             fName:fName,
             lName:lName,
-            DOB:DOB,
-            LinkTree:LinkTree,
-            username:username,
+            email: email,
+            dob: DOB,
+            username: username,
+            link: LinkTree,
+            niche: "Clothes",
+            password:password,
         }
         // setAllentry([...allEntry, newEntry])
-        console.log(newEntry)
-        const s = await axios.post('http://localhost:8000/endsignup', newEntry).then(navigate('/login')).catch(err=>console.log("Error"))
+        // console.log(newEntry)
+        try{
+          await axios.post('http://localhost:8000/endsignup', newEntry, {withCredentials: true});
+          navigate('/login')
+        }
+        catch (err) {
+            console.log("ERROR")
+        }
+        // const s = await axios.post('http://localhost:8000/endsignup', newEntry).then(navigate('/login')).catch(err=>console.log("Error"))
     }
   return (
     <div className="esignup">

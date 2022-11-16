@@ -25,19 +25,27 @@ const Osignup = ()=>{
   const Osignupsend = async (e) =>{
       e.preventDefault()
       const newEntry = {
+          role: "Client",
+          name: orgName,
+          category: orgCat,
           email: email,
-          password:password,
-          orgName:orgName,
-          orgCat:orgCat,
-          year:year,
+          startDate: year,
           country:country,
-          zCode:zCode,
+          zipcode:zCode,
           address:address,
+          password:password,
       }
       
       // setAllentry([...allEntry, newEntry])
-      console.log(newEntry)
-      const s = await axios.post('http://localhost:8000/orgsignup', newEntry).then(navigate('/login')).catch(err=>console.log("Error"))
+      // console.log(newEntry)
+      try{
+        await axios.post('http://localhost:8000/orgsignup', newEntry, {withCredentials: true});
+        navigate('/login')
+     }
+      catch (err) {
+          console.log("ERROR")
+      }
+      // const s = await axios.post('http://localhost:8000/orgsignup', newEntry).then(navigate('/login')).catch(err=>console.log("Error"))
   }
   return (
     <div className="osignup">
