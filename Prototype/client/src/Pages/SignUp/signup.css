@@ -85,6 +85,10 @@
   font-size: 0.8rem;
 }
 
+.signupOptions {
+  color: white;
+}
+
 @font-face {
   font-family: "SemiBold";
   src: local("Poppins-SemiBold"),

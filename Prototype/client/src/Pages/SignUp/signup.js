@@ -25,7 +25,7 @@ function SignUp() {
       <div className='signuparea'>
         <p className='signupmsg'>STEP 1 OF 2</p>
         <h1 className='signuptitle'>Sign Up as an</h1>
-        <div value={opt} onChange={(e)=>setopt(e.target.value)}>
+        <div className='signupOptions' value={opt} onChange={(e)=>setopt(e.target.value)}>
           <input type="radio" value="Organization" name='mygroup' /> Organization
           <input type="radio" value="Endorser" name='mygroup' /> Endorser
         </div>
