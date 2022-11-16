@@ -72,7 +72,6 @@ app.post('/admin/createAnnouncement', (authenticateUser), async (req, res) => {
 
 
 // general
-
 app.get('/logout', (req, res) => {
     res.cookie('jwt', '', {maxAge:1})
     res.status(200).send()

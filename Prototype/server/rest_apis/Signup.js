@@ -38,6 +38,7 @@ async function Signup(req, res){
             // const password = createHash('sha256').update(sanitize(req.body.password)).digest('hex')
             await createClient(role, name, category, email, startDate, country, zipcode, address, password )
             res.status(200).send()
+            console.log("Successfully created client")
         }
         else {
             res.status(401).send()
