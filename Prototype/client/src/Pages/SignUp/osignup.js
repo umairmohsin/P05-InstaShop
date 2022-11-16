@@ -82,7 +82,7 @@ const Osignup = ()=>{
             <input name='password' id='password' value={password} onChange={(e)=>setPassword(e.target.value)} type="password" placeholder='Confirm Password' className='osignupinput2'/>
           </label>
         </form>
-        <button onClick={Osignupsend} type='submit' className='osignupbuttons'>Confirm Details and Create Account</button>
+        <button onClick={Osignupsend} className='osignupbuttons'>Confirm Details and Create Account</button>
         <p className='osignupbottom1'onClick={login}>Already a member? Log In</p>
       </div>
     </div>

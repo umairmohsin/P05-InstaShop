@@ -39,17 +39,8 @@ const ChangePass = ()=>{
       if (pass1 === pass2){
         
       let password = await hash(pass1)
-      const res = await axios.post("http://localhost:8000/changePasswordGeneral", { password: password})
-      console.log('1here')
-      console.log(res)
-      console.log('2here')
+      await axios.post("http://localhost:8000/changePasswordGeneral", { password: password}, {withCredentials: true});
       navigate('/')
-      setTimeout(() => {
-        setMsg('')
-    }, 2500)
-      setOldPass('')
-      setPass1('')
-      setPass2('')
       } 
     } catch(err){
         console.log(err);

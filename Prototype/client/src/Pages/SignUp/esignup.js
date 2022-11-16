@@ -49,7 +49,7 @@ const Esignup = ()=>{
       <div className='esignuparea'>
         <p className='esignupmsg'>STEP 2 OF 2</p>
         <h1 className='esignuptitle'>Enter Details</h1>
-        <form action='' onSubmit={Esignupsend}>
+        <form >
           <label>
             <input name='fname' id='fname' value={fName} onChange={(e)=>setFName(e.target.value)} type="text" placeholder='First Name' className='esignupinput1'/>
           </label>
@@ -75,7 +75,7 @@ const Esignup = ()=>{
             <input name='password' id='password' value={password} onChange={(e)=>setPassword(e.target.value)} type="password" placeholder='Confirm Password' className='esignupinput2'/>
           </label>
         </form>
-        <button onClick={Esignupsend} className='esignupbuttons' type='submit'>Confirm Details and Create Account</button>
+        <button  className='esignupbuttons' onClick={Esignupsend} >Confirm Details and Create Account</button>
         <p className='esignupbottom1'onClick={login}>Already a member? Log In</p>
       </div>
     </div>

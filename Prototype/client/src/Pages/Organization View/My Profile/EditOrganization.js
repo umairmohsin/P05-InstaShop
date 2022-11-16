@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import './EditOrganization.css'
+import { Navigate, useNavigate } from 'react-router-dom'
+import axios from 'axios'
+
 const EditOrgProfile = ()=>{
   const [email, setEmail] = useState("justaju@gmail.com")
   const [orgName, setOrgName] = useState("Justaju")
@@ -11,7 +14,7 @@ const EditOrgProfile = ()=>{
 
   const [allEntry, setAllentry] = useState([])
 
-  const editop = (e) =>{
+  const editop = async (e) =>{
       e.preventDefault()
       const newEntry = {
           orgName:orgName,
@@ -22,7 +25,21 @@ const EditOrgProfile = ()=>{
       }
       setAllentry([...allEntry, newEntry])
       console.log(allEntry)
+
+      try{
+        await axios.post('http://localhost:8000/clientProfile', allEntry, {withCredentials: true});
+        navigate('/')
+      }
+      catch (err) {
+          console.log("ERROR")
+      }
   }
+
+  const navigate = useNavigate()
+    const onClickHandler = () => {
+      navigate('/ChangePass')
+    }   
+
   return (
     <div className="editop">
       <div className='editoparea'>
@@ -36,10 +53,10 @@ const EditOrgProfile = ()=>{
             <input name='orgCat' id='orgCat' value={orgCat} onChange={(e)=>setOrgCat(e.target.value)} type="text" placeholder='Organization Category' className='editopinput2'/>
           </label>
           <label>
-            <input name='email' id='email' value={email} type="email" placeholder='Email' className='editopinput1'/>
+            <input name='email' id='email' value={email} onChange={(e)=>setEmail(e.target.value)} type="email" placeholder='Email' className='editopinput1'/>
           </label>
           <label>
-            <input name='year' id='year' value={year} type="text" placeholder='Year of Commencement' className='editopinput2'/>
+            <input name='year' id='year' value={year} onChange={(e)=>setYear(e.target.value)} type="text" placeholder='Year of Commencement' className='editopinput2'/>
           </label>
           <label>
             <input name='country' id='country' value={country} onChange={(e)=>setCountry(e.target.value)} type="text" placeholder='Country/Region' className='editopinput1'/>
@@ -51,8 +68,8 @@ const EditOrgProfile = ()=>{
             <input name='address' id='address' value={address} onChange={(e)=>setAdd(e.target.value)} type="text" placeholder='Full Address' className='editopinputfull'/>
           </label>
         </form>
-        <button type='submit' className='editopbuttons'>Confirm Changes</button>
-        <button type='submit' className='editopbuttons'>Change Password</button>
+        <button className='editopbuttons' onClick = {editop} >Confirm Changes</button>
+        <button className='editopbuttons' onClick = {onClickHandler} >Change Password</button>
       </div>
     </div>
   );

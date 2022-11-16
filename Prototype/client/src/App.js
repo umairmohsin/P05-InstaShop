@@ -23,12 +23,16 @@ const App = ()=>{
       <Router>
       <Navbar />
         <Routes>
+          {/* <Route path="/" element={(<ChangePass/>)}/> */}
           <Route path="/" element={(<Landing />)}/>
           <Route path="/login" element={(<Login />)}/>
           <Route path="/signup" element={(<Signup />)}/>
           <Route path="/signuporg" element={(<Osignup />)}/>
           <Route path="/signupend" element={(<Esignup />)}/>
           <Route path="/ChangePass" element={(<ChangePass />)}/>
+          <Route path="/EditAdmin" element={(<EditAdminProfile />)}/>
+          <Route path="/EditEndorsee" element={(<EditEndorseeProfile />)}/>
+          <Route path="/announce" element={(<Announce />)}/>
         </Routes>
       </Router>
     </div>

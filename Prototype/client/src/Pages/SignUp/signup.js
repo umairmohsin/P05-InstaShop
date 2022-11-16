@@ -32,7 +32,7 @@ function SignUp() {
         </div>
         <button onClick={signup} className='signupbuttons'>Confirm Choice</button>
         <p className='signupbottom1'onClick={login}>Already a member? 
-          <Link to='/'>Login</Link>
+          <Link to='/login'>Login</Link>
         </p>
       </div>
     </div>

@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+import axios from 'axios'
 import './EditAdmin.css'
 const EditAdminProfile = ()=>{
     const [email, setEmail] = useState("23100069@lums.edu.pk")
@@ -6,6 +9,11 @@ const EditAdminProfile = ()=>{
     const [lName, setLName] = useState("Shahid")
     const [username, setUserName] = useState("Admin")
     const [allEntry, setAllentry] = useState([])
+    const navigate = useNavigate()
+
+    const onClickHandler = () => {
+      navigate('/ChangePass')
+    }
 
   return (
     <div className="editap">
@@ -23,10 +31,11 @@ const EditAdminProfile = ()=>{
             <input name='email' id='email' value={email} type="email" placeholder='Email' className='editapinput1'/>
           </label>
           <label>
-            <input value={username} name='username' id='username' value={username} type="text" placeholder='Username' className='editapinput2'/>
+            <input value={username} name='username' id='username' type="text" placeholder='Username' className='editapinput2'/>
           </label>
+          <button className='editapbuttons' onClick={onClickHandler} >Change Password</button>
         </form>
-        <button className='editapbuttons' type='submit'>Change Password</button>
+        
       </div>
     </div>
   );
