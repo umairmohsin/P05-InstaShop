@@ -43,3 +43,26 @@ export const NavMenu = styled.div`
     display: none;
   }
 `;
+
+export const NavBtn = styled.nav`
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+  
+export const NavBtnLink = styled(Link)`
+  border-radius: 4px;
+  background: #F47458;
+  padding: 10px 22px;
+  color: #E7F6F2;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  /* Second Nav */
+  margin-left: 24px;
+`;

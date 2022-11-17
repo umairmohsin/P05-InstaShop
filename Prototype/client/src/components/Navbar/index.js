@@ -15,7 +15,7 @@ const Navbar = () => {
       <Nav>
         <Bars />
         <NavMenu>
-          <NavLink to='/about' activeStyle>
+          <NavLink to='/home' activeStyle>
             <img src={logo} />
           </NavLink>
           <NavLink to='/home' activeStyle>
@@ -27,10 +27,13 @@ const Navbar = () => {
           <NavLink to='/access' activeStyle>
             Restrict/Remove Access
           </NavLink>
-          <NavLink to='/profile' activeStyle>
+          <NavLink to='/adminprofile' activeStyle>
             Profile
           </NavLink>
         </NavMenu>
+        <NavBtn>
+          <NavBtnLink to='/login'>Sign Out</NavBtnLink>
+        </NavBtn>
       </Nav>
     </>
   );
