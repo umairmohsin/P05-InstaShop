@@ -6,16 +6,15 @@ const Announce = ()=>{
 
   const navigate = useNavigate()
     const [Title, setTitle] = useState("")
-    const [Recepient, setRecepient] = useState("")
     const [Body, setBody] = useState("")
 
     const announcement = async (e) =>{
       e.preventDefault()
-      const announcements = {announcements:{Title:Title,Recepient:Recepient,Body:Body}}
+      const announcements = {title:Title,body:Body}
       // setAllentry([...allEntry, newEntry])
       // console.log(allEntry)
       console.log(announcements)
-      await axios.post('http://localhost:8000/getAnnouncements', announcements, {withCredentials: true}).then(navigate('/')).catch(err=>console.log(err))
+      await axios.post('http://localhost:8000/create_announcement', announcements, {withCredentials: true}).then(navigate('/')).catch(err=>console.log(err))
       
   }
 
@@ -28,7 +27,6 @@ const Announce = ()=>{
           <label>
             <input type="text" placeholder='Title' onChange={(e)=>setTitle(e.target.value)}className='announceinput1'/>
           </label>
-          <input type="text" placeholder='Recipients'onChange={(e)=>setRecepient(e.target.value)} className='announceinputmid'/>
           <label>
             <textarea type="text" placeholder='Content' onChange={(e)=>setBody(e.target.value)}className='announceinput2'></textarea>
           </label>

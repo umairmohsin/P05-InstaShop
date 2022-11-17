@@ -14,6 +14,8 @@ const {getAnnouncements} = require('./rest_apis/getAnnouncements')
 const {create_announcement} = require('./rest_apis/admin/createAnnouncement')
 const {Signup}  = require('./rest_apis/Signup')
 
+const {changePasswordGeneral} = require('./rest_apis/changePasswordGeneral')
+
 
 //Admin
 // const {create_announcement} = require('./rest_apis/admin/createAnnouncement')
@@ -45,12 +47,16 @@ app.post('/signup', async (req, res) => {
     await Signup(req, res)
 })
 
+app.post('/ChangePass', async (req, res) => {
+    await changePasswordGeneral(req, res)
+})
+
 app.get('/getAnnouncements', (authenticateUser), async (req, res) => {
     await getAnnouncements(req, res)
 })
 
 // Admin
-app.post('/admin/createAnnouncement', (authenticateUser), async (req, res) => {
+app.post('/create_announcement', (authenticateUser), async (req, res) => {
     await create_announcement(req, res)
 })
 
