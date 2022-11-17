@@ -19,7 +19,7 @@ const {changePasswordGeneral} = require('./rest_apis/changePasswordGeneral')
 
 //Admin
 // const {create_announcement} = require('./rest_apis/admin/createAnnouncement')
-const{adminProfile} = require('./rest_apis/admin/adminProfile')
+const{getAdminProfile} = require('./rest_apis/admin/adminProfile')
 //Influencer
 const{getInfluencerProfile} = require('./rest_apis/influencer/InfluencerProfile')
 // Client
