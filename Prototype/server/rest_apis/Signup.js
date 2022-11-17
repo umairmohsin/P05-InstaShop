@@ -2,7 +2,7 @@ const {createClient} = require('../database/Create/createClient')
 const {createInfluencer} = require('../database/Create/createInfluencer')
 const mongoose = require('mongoose')
 const sanitize = require('mongo-sanitize');
-// const {createHash} = require('crypto');
+const {createHash} = require('crypto');
 
 // general signup functions from create scheme
 
@@ -18,11 +18,11 @@ async function Signup(req, res){
             const username = sanitize(req.body.username)
             const link = sanitize(req.body.link)
             const niche = sanitize(req.body.niche)
-            const password = sanitize(req.body.password)
-            // const password = createHash('sha256').update(sanitize(req.body.password)).digest('hex')
+            // const password = sanitize(req.body.password)
+            const password = createHash('sha256').update(sanitize(req.body.password)).digest('hex')
             await createInfluencer(role, fname, lname, email, dob, username, link, niche, password )
             res.status(200).send()
-            console.log("Successfully created influencer")
+            // console.log("Successfully created influencer")
         }
 
         else if(req.body.role == 'Client'){
@@ -34,11 +34,11 @@ async function Signup(req, res){
             const country = sanitize(req.body.country)
             const zipcode = sanitize(req.body.zipcode)
             const address =  sanitize(req.body.address)
-            const password = sanitize(req.body.password)
-            // const password = createHash('sha256').update(sanitize(req.body.password)).digest('hex')
+            let password = sanitize(req.body.password)
+            password = createHash('sha256').update(password).digest('hex')
             await createClient(role, name, category, email, startDate, country, zipcode, address, password )
             res.status(200).send()
-            console.log("Successfully created client")
+            // console.log("Successfully created client")
         }
         else {
             res.status(401).send()

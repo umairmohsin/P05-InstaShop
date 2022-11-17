@@ -5,7 +5,7 @@ const sanitize = require('mongo-sanitize');
 
 async function login(req, res){
     try{
-        console.log(req.body)
+        // console.log(req.body)
         const role = sanitize(req.body.role)
         const email = sanitize(req.body.email)
         const user = await mongoose.connection.db.collection(`${role}s`).findOne({

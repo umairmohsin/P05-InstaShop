@@ -16,6 +16,7 @@ async function hash(string) {
 }
 const Login = ()=>{
     const navigate = useNavigate()
+    const [role, setRole] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [allEntry, setAllentry] = useState([])
@@ -35,7 +36,8 @@ const Login = ()=>{
     const login = async (e) =>{
         e.preventDefault()
         let pw = await hash(password)
-        const newEntry = {role: 'admin',email: email, password:pw}
+        const newEntry = {role: role.toLowerCase(), email: email, password:pw}
+        // console.log(newEntry)
         // setAllentry([...allEntry, newEntry])
         // console.log(allEntry)
         // console.log("hello")
@@ -55,7 +57,14 @@ const Login = ()=>{
       {/* <img className='logo' src={logo} /> */}
       <div className='area'>
         <p className='loginmsg'>CONTINUE YOUR JOURNEY</p>
-        <h1 className='logintitle'>Sign In</h1>
+        <h1 className='logintitle'>Sign In As</h1>
+        
+        <div className='signupOptions' value = {role} onChange={(e)=>setRole(e.target.value)}>
+          <input type="radio" value="Client" name='mygroup' /> Organization
+          <input type="radio" value="Influencer" name='mygroup' /> Endorser
+          <input type="radio" value="Admin" name='mygroup' /> Admin
+        </div>
+        
         <form action='' onSubmit={login}>
           <label>
             <input name='email' id='email' type="text" placeholder='Email' value={email} onChange={(e)=>setEmail(e.target.value)} className='logininput1'/>
