@@ -1,9 +1,9 @@
 const sanitize = require('mongo-sanitize')
-const Influencer = require('../database/Schema/Influencer')
+const Influencer = require('../../database/Schema/Influencer')
 
 async function getInfluencerProfile(req, res){
     try{
-        if(res.role === 'influencer'){
+        if(req.role === 'influencer'){
             const influencer = await Influencer.findOne({email: sanitize(req.body.email)})
             // const fname = await Influencer.findOne({first: sanitize(req.body.name.first)})
             // // const lname =  await Influencer.findOne({last: sanitize(req.body.name.last)})
