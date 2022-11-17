@@ -3,7 +3,12 @@ import { useNavigate } from 'react-router-dom'
 
 import axios from 'axios'
 import './EditAdmin.css'
-const EditAdminProfile = ()=>{
+const  EditAdminProfile =  ()=>{
+
+  axios.get("http://localhost:8000/adminProfile").then(res => {
+    console.log(res)
+  }).catch(err=>console.log(err))
+
     const [email, setEmail] = useState("23100069@lums.edu.pk")
     const [fName, setFName] = useState("Muhammad Bilal")
     const [lName, setLName] = useState("Shahid")

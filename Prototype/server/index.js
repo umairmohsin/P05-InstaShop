@@ -19,7 +19,7 @@ const {changePasswordGeneral} = require('./rest_apis/changePasswordGeneral')
 
 //Admin
 // const {create_announcement} = require('./rest_apis/admin/createAnnouncement')
-const{getAdminProfile} = require('./rest_apis/admin/adminProfile')
+const{adminProfile} = require('./rest_apis/admin/adminProfile')
 //Influencer
 const{getInfluencerProfile} = require('./rest_apis/influencer/InfluencerProfile')
 // Client
@@ -61,9 +61,9 @@ app.post('/create_announcement', (authenticateUser), async (req, res) => {
 })
 
 
-// app.get('/getAdminProfile' , (authenticateUser) , async(req,res) =>{
-//     await  getAdminProfile(req, res)    
-// })
+app.get('/adminProfile' , (authenticateUser) , async(req,res) =>{
+    await  getAdminProfile(req, res)    
+})
 
 
 //Influencer Profile
