@@ -1,5 +1,5 @@
 const sanitize = require('mongo-sanitize')
-const Influencer = require('../../database/Schema/Influencer')
+const Influencer = require('../database/Schema/Influencer')
 
 async function getInfluencerProfile(req, res){
     try{
