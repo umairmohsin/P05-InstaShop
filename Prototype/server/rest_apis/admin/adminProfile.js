@@ -1,7 +1,11 @@
 const sanitize = require('mongo-sanitize')
+<<<<<<< HEAD
 // const Admin = require('../database/Schema/Admin')
 const Admin = require('../../database/Schema/Admin')
 
+=======
+const Admin = require('../../database/Schema/Admin')
+>>>>>>> 28e3d309524d1caaeadf5dd927d4373e24308a9d
 
 async function getAdminProfile(req, res){
     try{
