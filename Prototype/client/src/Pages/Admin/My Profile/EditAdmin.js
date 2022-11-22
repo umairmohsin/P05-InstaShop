@@ -25,7 +25,7 @@ const  EditAdminProfile =  ()=>{
       <div className='editaparea'>
         <p className='editapmsg'>YOU CANNOT EDIT DETAILS</p>
         <h1 className='editaptitle'>View Profile</h1>
-        <form>
+        <form onSubmit={onClickHandler}>
           <label>
             <input name='fname' id='fname' value={fName} type="text" placeholder='First Name' className='editapinput1'/>
           </label>

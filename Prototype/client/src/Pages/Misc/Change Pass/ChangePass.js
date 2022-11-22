@@ -37,9 +37,9 @@ const ChangePass = ()=>{
     try{
       if (pass1 === pass2){
       let password = await hash(pass1)
-      await axios.post("http://localhost:8000/ChangePass", {password:password}, {withCredentials: true});
+      await axios.post("http://localhost:8000/ChangePass", {role:"admin",email:"bilal.shahid@gmail.com",password:password}, {withCredentials: true});
       
-      navigate('/')
+      navigate('/home')
       } 
     } catch(err){
         console.log(err);
@@ -48,22 +48,22 @@ const ChangePass = ()=>{
 
 
   const oldPassword = (ev) =>{
-    ev.preventDefault()
+    // ev.preventDefault()
     setOldPass(ev.target.value)
   }
 
   const changePass1 = (ev) => {
-    ev.preventDefault()
+    // ev.preventDefault()
     setPass1(ev.target.value)
   }
 
   const changePass2 = (ev) => {
-    ev.preventDefault()
+    // ev.preventDefault()
     setPass2(ev.target.value)
   }
 
   const e = (ev) =>{
-    ev.preventDefault()
+    // ev.preventDefault()
     setEmail(ev.target.value)
   }
 
@@ -74,7 +74,7 @@ const ChangePass = ()=>{
       <div className='changepassarea'>
         <p className='changepassmsg'>MAKE SURE YOUR NEW PASSWORD IS STRONG</p>
         <h1 className='changepasstitle'>Change Password</h1>
-        <form >
+        <form action='' onSubmit={handleClick} >
         {/* <label>
             <input type="email" placeholder='Enter your email' value={email} onChange={e}className='changepassinput1' required/>
           </label> */}

@@ -14,7 +14,7 @@ const Announce = ()=>{
       // setAllentry([...allEntry, newEntry])
       // console.log(allEntry)
       console.log(announcements)
-      await axios.post('http://localhost:8000/create_announcement', announcements, {withCredentials: true}).then(navigate('/')).catch(err=>console.log(err))
+      await axios.post('http://localhost:8000/create_announcement', announcements, {withCredentials: true}).then(navigate('/home')).catch(err=>console.log(err))
       
   }
 

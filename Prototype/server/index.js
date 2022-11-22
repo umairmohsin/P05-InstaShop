@@ -17,7 +17,9 @@ const {Signup}  = require('./rest_apis/Signup')
 const {changePasswordGeneral} = require('./rest_apis/changePasswordGeneral')
 
 
+
 //Admin
+// const {changePassword} = require('./rest_apis/admin/changePassword')
 // const {create_announcement} = require('./rest_apis/admin/createAnnouncement')
 const{getAdminProfile} = require('./rest_apis/admin/adminProfile')
 //Influencer

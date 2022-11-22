@@ -16,6 +16,7 @@ import Eprofile from "./Pages/Organization View/Endorsee Profile/Eprofile";
 import TestCard from "./Pages/Organization View/Endorsee Profile/testcard";
 import SignUp from "./Pages/SignUp/signup";
 import ChangePass from "./Pages/Misc/Change Pass/ChangePass";
+import HomePage from "./Pages/Organization View/HomePage/Homepage";
 
 const App = ()=>{
   return(
@@ -33,6 +34,8 @@ const App = ()=>{
           <Route path="/EditAdmin" element={(<EditAdminProfile />)}/>
           <Route path="/EditEndorsee" element={(<EditEndorseeProfile />)}/>
           <Route path="/announce" element={(<Announce />)}/>
+          <Route path="/adminprofile" element={(<EditAdminProfile />)}/>
+          <Route path="/home" element={(<HomePage />)}/>
         </Routes>
       </Router>
     </div>

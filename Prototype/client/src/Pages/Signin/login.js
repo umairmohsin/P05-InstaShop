@@ -44,7 +44,7 @@ const Login = ()=>{
         // console.log(newEntry)
         try{
           await axios.post('http://localhost:8000/login', newEntry, {withCredentials: true});
-          navigate('/announce')
+          navigate('/home')
         }
         catch (err) {
             console.log("ERROR")

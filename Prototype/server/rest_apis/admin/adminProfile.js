@@ -1,10 +1,12 @@
 const sanitize = require('mongo-sanitize')
-const Admin = require('../database/Schema/Admin')
+// const Admin = require('../database/Schema/Admin')
+const Admin = require('../../database/Schema/Admin')
+
 
 async function getAdminProfile(req, res){
     try{
         console.log(res)
-        if(res.role === 'Admin'){
+        if(req.role === 'Admin'){
             const admin = await Admin.findOne({email: sanitize(req.body.email)})
             // const role   = await Admin.findOne({role: sanitize(req.body.role)})
             // const username = await Admin.findOne({username: sanitize(req.body.username)})
