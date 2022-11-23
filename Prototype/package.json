@@ -1,0 +1,25 @@
+{
+  "name": "coolapp",
+  "version": "1.0.0",
+  "description": "app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "build": "cd server && npm install && cd ../client && npm install && npm run build",       
+    "test": "echo \"Error: no test specified\" && exit 1"       
+  },
+  "engines": {
+    "node": "v16.13.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umairmohsin/testing_prototpe.git"
+  },
+  "bugs": {
+    "url": "https://github.com/umairmohsin/testing_prototpe/issues"
+  },
+  "homepage": "https://github.com/umairmohsin/testing_prototpe#readme"
+}
