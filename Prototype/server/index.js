@@ -26,7 +26,6 @@ const{getInfluencerProfile} = require('./rest_apis/influencer/InfluencerProfile'
 const {getclientProfile} = require('./rest_apis/client/clientProfile')
 
 
-
 const PORT = process.env.PORT || 8000
 
 app.use(express.json())
@@ -65,7 +64,6 @@ app.get('/adminProfile' , (authenticateUser) , async(req,res) =>{
     await  getAdminProfile(req, res)    
 })
 
-
 //Influencer Profile
 // app.get('/getInfluencerProfile' , (authenticateUser) , async(req,res) =>{
 //     await  getInfluencerProfile(req, res)    
@@ -74,7 +72,6 @@ app.get('/adminProfile' , (authenticateUser) , async(req,res) =>{
 // app.get('/getclientProfile' , (authenticateUser) , async(req,res) =>{
 //     await  getclientProfile(req, res)    
 // })
-
 
 // general
 app.get('/logout', (req, res) => {

@@ -17,7 +17,6 @@ const verify = (token, secretStr) => {
         })
     })
 }
-
 const authenticateUser = async (req, res, next) => {
     try{
         const token = req.cookies.jwt

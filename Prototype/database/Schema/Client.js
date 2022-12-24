@@ -38,6 +38,16 @@ const clientSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
+    },
+    Rating:{
+        type: Number,
+        required: true
+    },
+    PastOrder:{
+
+    },
+    Contracts:{
+
     }
 })
 

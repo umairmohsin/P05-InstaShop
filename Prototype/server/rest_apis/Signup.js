@@ -5,7 +5,6 @@ const sanitize = require('mongo-sanitize');
 const {createHash} = require('crypto');
 
 // general signup functions from create scheme
-
 async function Signup(req, res){
     // console.log("In signup")
     try{
@@ -18,11 +17,9 @@ async function Signup(req, res){
             const username = sanitize(req.body.username)
             const link = sanitize(req.body.link)
             const niche = sanitize(req.body.niche)
-            // const password = sanitize(req.body.password)
             const password = createHash('sha256').update(sanitize(req.body.password)).digest('hex')
             await createInfluencer(role, fname, lname, email, dob, username, link, niche, password )
             res.status(200).send()
-            // console.log("Successfully created influencer")
         }
 
         else if(req.body.role == 'Client'){
@@ -38,7 +35,6 @@ async function Signup(req, res){
             password = createHash('sha256').update(password).digest('hex')
             await createClient(role, name, category, email, startDate, country, zipcode, address, password )
             res.status(200).send()
-            // console.log("Successfully created client")
         }
         else {
             res.status(401).send()
