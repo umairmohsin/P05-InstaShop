@@ -6,8 +6,8 @@ import './App.css';
 import Landing from "./Pages/Landing/landing";
 import Login from "./Pages/Signin/login";
 import Signup from "./Pages/SignUp/signup";
-import Osignup from "./Pages/SignUp/osignup";
-import Esignup from "./Pages/SignUp/esignup";
+import Orgsignup from "./Pages/SignUp/Orgsignup";
+import Endsignup from "./Pages/SignUp/Endsignup";
 import Announce from "./Pages/Admin/Announcement/announce";
 import EditOrgProfile from "./Pages/Organization View/My Profile/EditOrganization";
 import EditEndorseeProfile from "./Pages/Endorsee View/My Profile/EditEndorsee";
@@ -28,8 +28,8 @@ const App = ()=>{
           <Route path="/" element={(<Landing />)}/>
           <Route path="/login" element={(<Login />)}/>
           <Route path="/signup" element={(<Signup />)}/>
-          <Route path="/signuporg" element={(<Osignup />)}/>
-          <Route path="/signupend" element={(<Esignup />)}/>
+          <Route path="/signuporg" element={(<Orgsignup />)}/>
+          <Route path="/signupend" element={(<Endsignup />)}/>
           <Route path="/ChangePass" element={(<ChangePass />)}/>
           <Route path="/EditAdmin" element={(<EditAdminProfile />)}/>
           <Route path="/EditEndorsee" element={(<EditEndorseeProfile />)}/>
@@ -40,7 +40,5 @@ const App = ()=>{
       </Router>
     </div>
   )
-
 }
-
 export default App;

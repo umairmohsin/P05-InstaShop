@@ -2,7 +2,6 @@ import logo from '../../images/logo.png'
 import './signup.css';
 import React, { useState } from 'react'
 import {useNavigate} from 'react-router-dom';
-// import axios from 'axios'
 import { Link } from "react-router-dom";
 
 function SignUp() {
@@ -19,7 +18,6 @@ function SignUp() {
   }
   const login = () =>{
     navigate('/login')
-   
   }
   return (
     <div className="signup">
@@ -38,5 +36,4 @@ function SignUp() {
     </div>
   );
 }
-
 export default SignUp;
