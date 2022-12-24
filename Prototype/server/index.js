@@ -13,9 +13,7 @@ const {login} = require('./rest_apis/login')
 const {getAnnouncements} = require('./rest_apis/getAnnouncements')
 const {create_announcement} = require('./rest_apis/admin/createAnnouncement')
 const {Signup}  = require('./rest_apis/Signup')
-
 const {changePasswordGeneral} = require('./rest_apis/changePasswordGeneral')
-
 
 
 //Admin
@@ -76,7 +74,6 @@ app.get('/adminProfile' , (authenticateUser) , async(req,res) =>{
 // app.get('/getclientProfile' , (authenticateUser) , async(req,res) =>{
 //     await  getclientProfile(req, res)    
 // })
-
 
 
 // general
