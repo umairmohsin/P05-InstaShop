@@ -44,10 +44,8 @@ const clientSchema = new mongoose.Schema({
     //     required: true
     // },
     // PastOrder:{
-
     // },
     // Contracts:{
-
     // }
 })
 

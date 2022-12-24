@@ -1,8 +1,7 @@
-const Admin = require('../Schema/Client')
+const Order = require('../Schema/Order')
 
-async function createOrder(role, OrderID, clemail , infemail, price) {
-    const client = await Admin.create({  //change Admin
-        role: role,
+async function createOrder( OrderID, clemail , infemail, price) {
+    const client = await Order.create({  //change Admin
         OrderID: OrderID,
         ClientEmail: clemail,
         InfluencerEmail: infemail,

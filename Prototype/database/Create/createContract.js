@@ -1,8 +1,7 @@
-const Admin = require('../Schema/Client')
+const Contracts = require('../Schema/Contracts')
 
-async function createContract(role, ContID, clemail , infemail, price) {
-    const client = await Admin.create({  //change Admin
-        role: role,
+async function createContract( ContID, clemail , infemail, price) {
+    const client = await Contracts.create({ 
         ContractID: ContID,
         ClientEmail: clemail,
         InfluencerEmail: infemail,

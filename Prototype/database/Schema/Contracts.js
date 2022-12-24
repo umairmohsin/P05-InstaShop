@@ -1,11 +1,8 @@
 const mongoose = require('mongoose')
 
 const ContractSchema = new mongoose.Schema({
-    role: {
-        type: String,
-        required: true
-    },
-    ContractID: {     //Primary key
+    
+    ContractID: { 
         type: Number,
         required: true,
     },
@@ -27,4 +24,4 @@ const ContractSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Admin', ContractSchema)
+module.exports = mongoose.model('Contracts', ContractSchema)

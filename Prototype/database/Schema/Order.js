@@ -1,15 +1,12 @@
 const mongoose = require('mongoose')
 
 const OrderSchema = new mongoose.Schema({
-    role: {
-        type: String,
-        required: true
-    },
+
     OrderID: {     //Primary key
         type: Number,
         required: true,
     },
-    ClientEmail: {   // import directly from client and influencer
+    ClientEmail: {  
         type: String,
         required: true,
         minlength: 10,
@@ -27,4 +24,4 @@ const OrderSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Admin', OrderSchema)
+module.exports = mongoose.model('Order', OrderSchema)
