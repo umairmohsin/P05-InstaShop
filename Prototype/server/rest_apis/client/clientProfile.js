@@ -5,11 +5,6 @@ async function getclientProfile(req, res){
     try{
         if(res.role === 'Client'){
             const client = await Client.findOne({email: sanitize(req.body.email)})
-            // const role   = await Client.findOne({role: sanitize(req.body.role)})
-            // const category = await Client.findOne({category: sanitize(req.body.category)})
-            // const country = await Client.findOne({country: sanitize(req.body.country)})
-            // const zipcode = await Client.findOne({zipcode: sanitize(req.body.zipcode)})
-            // const address = await Client.findOne({address: sanitize(req.body.address)})
            const toSend = {
                 // return the profile
                 client:client,
