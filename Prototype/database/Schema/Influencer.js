@@ -41,16 +41,16 @@ const influencerSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    Rating:{
-        type: Number,
-        required: true
-    },
-    PastOrder:{
+    // Rating:{
+    //     type: Number,
+    //     required: true
+    // },
+    // PastOrder:{
 
-    },
-    Contracts:{
+    // },
+    // Contracts:{
 
-    }
+    // }
 })
 
 module.exports = mongoose.model('Influencer', influencerSchema)
