@@ -39,14 +39,12 @@ const clientSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    // Rating:{
-    //     type: Number,
-    //     required: true
-    // },
-    // PastOrder:{
-    // },
-    // Contracts:{
-    // }
+    rating:{
+        type: Number
+    },
+    pastOrders:{
+        type: [Number]
+    }
 })
 
 module.exports = mongoose.model('Client', clientSchema)
