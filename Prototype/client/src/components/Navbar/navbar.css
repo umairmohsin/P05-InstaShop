@@ -1,0 +1,21 @@
+.searchform {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+}
+
+.searchinput {
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
+    position: relative;
+    background-color: #A5C9CA;
+    height: 1.75rem;
+    width: 16rem;
+    color: #2C3333;
+    font-size: 0.75rem;
+    border: none;
+    border-radius: 1rem;
+  }
