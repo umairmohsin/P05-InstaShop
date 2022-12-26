@@ -60,8 +60,8 @@ const Login = ()=>{
         <h1 className='logintitle'>Sign In As</h1>
         
         <div className='signupOptions' value = {role} onChange={(e)=>setRole(e.target.value)}>
-          <input type="radio" value="Client" name='mygroup' /> Organization
-          <input type="radio" value="Influencer" name='mygroup' /> Endorser
+          <input type="radio" value="Client" name='mygroup' /> Client
+          <input type="radio" value="Influencer" name='mygroup' /> Influencer
           <input type="radio" value="Admin" name='mygroup' /> Admin
         </div>
         

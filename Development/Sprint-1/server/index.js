@@ -24,6 +24,7 @@ const{getAdminProfile} = require('./rest_apis/admin/adminProfile')
 const{getInfluencerProfile} = require('./rest_apis/influencer/InfluencerProfile')
 // Client
 const {getclientProfile} = require('./rest_apis/client/clientProfile')
+const {getAllInfluencers} = require('./rest_apis/client/viewInfluencers')
 
 
 const PORT = process.env.PORT || 8000
@@ -62,6 +63,10 @@ app.post('/create_announcement', (authenticateUser), async (req, res) => {
 
 app.get('/adminProfile' , (authenticateUser) , async(req,res) =>{
     await  getAdminProfile(req, res)    
+})
+
+app.get('/allInfProfiles', (authenticateUser), async(req,res) => {
+    await getAllInfluencers(req, res)
 })
 
 //Influencer Profile
