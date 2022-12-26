@@ -1,5 +1,7 @@
 import React, { useState, useEffect} from 'react'
-import {useNavigate} from 'react-router-dom';
+// import {useNavigate} from 'react-router-dom';
+// import React, { useState } from 'react'
+import {useNavigate, useLocation} from 'react-router-dom';
 import './HomePage.css'
 import ProfileCards from './Card.js'
 import axios from 'axios';
@@ -46,6 +48,15 @@ const HomePage = ()=>{
   //   setAllFetched(true)
   // }
   
+  const navigate = useNavigate()
+  const location = useLocation()
+  const topending = () => {
+    navigate('/pendingapprovals', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
+  }
+  const toComplete = ()=>{
+    navigate('/completedorders', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
+  }
+  // const email= location.state.email
   return (
     <div className="homepage">
       <div className='homepagearea'>
@@ -57,6 +68,8 @@ const HomePage = ()=>{
           </label>
         </form>
         <button className='homepagebuttons' type='submit'>Search</button>
+        <button onClick={topending}>pending approvals</button>
+        <button onClick={toComplete}>Completed Orders</button>
       </div>
 
       {allProfiles && 

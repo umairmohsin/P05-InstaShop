@@ -1,3 +1,4 @@
+import {useNavigate, useLocation} from 'react-router-dom';
 import React from 'react';
 import './navbar.css'
 import logo from '../../images/logo.png'
@@ -119,6 +120,7 @@ const Navbar = () => {
       </>
     );
   }
+
 };
   
 export default Navbar;

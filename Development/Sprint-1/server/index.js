@@ -15,7 +15,8 @@ const {create_announcement} = require('./rest_apis/admin/createAnnouncement')
 const {Signup}  = require('./rest_apis/Signup')
 const {changePasswordGeneral} = require('./rest_apis/changePasswordGeneral')
 
-
+const shapack = require('../server/database/Schema/Announcement')
+const shapack2 = require('../server/database/Schema/Order')
 //Admin
 // const {changePassword} = require('./rest_apis/admin/changePassword')
 // const {create_announcement} = require('./rest_apis/admin/createAnnouncement')
@@ -25,6 +26,9 @@ const{getInfluencerProfile} = require('./rest_apis/influencer/InfluencerProfile'
 // Client
 const {getclientProfile} = require('./rest_apis/client/clientProfile')
 const {getAllInfluencers} = require('./rest_apis/client/viewInfluencers')
+const { getPendingApprovals } = require('./rest_apis/client/viewpendingapprovals.js')
+const { getCompletedOrders} = require('./rest_apis/client/completedorders.js')
+
 
 
 const PORT = process.env.PORT || 8000
@@ -64,6 +68,31 @@ app.post('/create_announcement', (authenticateUser), async (req, res) => {
 app.get('/adminProfile' , (authenticateUser) , async(req,res) =>{
     await  getAdminProfile(req, res)    
 })
+app.get("/read",async(req,res)=>{
+    shapack.find({},(err,result)=>{
+        if(err){
+            res.send(err)
+        }
+        res.send(result)
+        // console.log(result)
+    })
+})
+
+app.get('/pendingapprovals', async(req,res) =>{
+    await  getPendingApprovals(req, res)    
+})
+app.get('/completedorders', async(req,res) =>{
+    await  getCompletedOrders(req, res)    
+})
+// app.get("/pendingapprovals",async(req,res)=>{
+//     shapack2.find({},(err,result)=>{
+//         if(err){
+//             res.send(err)
+//         }
+//         res.send(result)
+//         // console.log(result)
+//     })
+// })
 
 app.get('/allInfProfiles', (authenticateUser), async(req,res) => {
     await getAllInfluencers(req, res)

@@ -24,12 +24,12 @@ const Login = ()=>{
 
 
     const signup = () =>{
-      navigate('/signup')
+      navigate('/signup', {state:{role:role,email:email,pwd:password}})
      
     }
 
     const ChangePassword = () => {
-      navigate('/ChangePass')
+      navigate('/ChangePass', {state:{role:role,email:email,pwd:password}})
     }
 
 
@@ -44,7 +44,7 @@ const Login = ()=>{
         // console.log(newEntry)
         try{
           await axios.post('http://localhost:8000/login', newEntry, {withCredentials: true});
-          navigate('/home')
+          navigate('/home', {state:{role:role,email:email,pwd:password}})
         }
         catch (err) {
             console.log("ERROR")
