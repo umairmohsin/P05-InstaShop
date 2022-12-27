@@ -31,6 +31,25 @@ const HomePage = ()=>{
   
   const navigate = useNavigate()
   const location = useLocation()
+  
+  const jobOffers = () => {
+    if(location.state.role === "Client"){
+
+    }
+    else if (location.state.role === "Influencer"){
+
+    }
+  }
+
+  const ongoingOrders = () => {
+    if(location.state.role === "Client"){
+
+    }
+    else if (location.state.role === "Influencer"){
+      
+    }
+  }
+
   const topending = () => {
     if(location.state.role === "Client"){
       navigate('/clientPendingapprovals', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
@@ -60,8 +79,13 @@ const HomePage = ()=>{
           </label>
         </form>
         <button className='homepagebuttons' type='submit'>Search</button>
-        <button onClick={topending}>pending approvals</button>
-        <button onClick={toComplete}>Completed Orders</button>
+        <div className='orderTabs'>
+          <button onClick={jobOffers}>Job Offers</button>
+          <button onClick={ongoingOrders}>Ongoing Orders</button>
+          <button onClick={topending}>Pending approvals</button>
+          <button onClick={toComplete}>Completed Orders</button>
+          <button onClick={topending}>Rejected Orders</button>
+        </div>
       </div>
 
       {allProfiles && 
