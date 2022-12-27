@@ -5,7 +5,7 @@ import axios from 'axios'
 import { useState } from 'react'
 // const shapack = require('./database/Schema/Announcement')
 // const shapack = require("../../../server/database/Schema/Announcement")
-const ApprovalsPending = ()=>{
+const ClientApprovalsPending = ()=>{
     const location = useLocation()
     const email = location.state.email
 
@@ -13,7 +13,7 @@ const ApprovalsPending = ()=>{
     const [pendinglist,setpendinglist] = useState([])
     const [newpendlist, setnewpendlist] = useState([])
     useEffect(()=>{
-        axios.get("http://localhost:8000/pendingapprovals").then(
+        axios.get("http://localhost:8000/clientPendingapprovals").then(
             (res)=>{
                 console.log(res.data)
                 setpendinglist(res.data)
@@ -51,4 +51,4 @@ const ApprovalsPending = ()=>{
         </div>
     )
 }
-export default ApprovalsPending;
+export default ClientApprovalsPending;

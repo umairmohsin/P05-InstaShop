@@ -41,11 +41,10 @@ const App = ()=>{
           <Route path="/announce" element={(<Announce />)}/>
           <Route path="/adminprofile" element={(<EditAdminProfile />)}/>
           <Route path="/home" element={(<HomePage />)}/>
-          <Route path="/read" element={(<Completed />)}/>
-          <Route path="/pendingapprovals" element={(<ApprovalsPending />)}/>
-          <Route path="/completedorders" element={(<CompleteOrderList />)}/>
-          <Route path="/influencerpendingapprovals" element={(<InfluencerApprovalsPending />)}/>
-          <Route path="/influencercompletedorders" element={(<InfluencerCompleteOrderList />)}/>
+          <Route path="/clientPendingapprovals" element={(<ClientApprovalsPending />)}/>
+          <Route path="/clientCompletedorders" element={(<ClientCompleteOrderList />)}/>
+          <Route path="/influencerPendingApprovals" element={(<InfluencerApprovalsPending />)}/>
+          <Route path="/influencerCompletedOrders" element={(<InfluencerCompleteOrderList />)}/>
         </Routes>
       </Router>
     </div>
