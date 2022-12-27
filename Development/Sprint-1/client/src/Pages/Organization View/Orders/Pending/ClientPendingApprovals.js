@@ -33,6 +33,12 @@ const ClientApprovalsPending = ()=>{
 
     }
     myfunc()
+    const setAccepted = async(myID)=>{
+        const acceptData = {ans:true, email:email, myID:myID}
+        // console.log(acceptData)
+        await axios.post("http://localhost:8000/changeAccepted",acceptData)
+
+    }
     // shapack();
     return(
         <div>
@@ -42,7 +48,11 @@ const ClientApprovalsPending = ()=>{
                 {
                     newpendlist.map((val,key)=>{
                         return(
-                            <div>{JSON.stringify(val,undefined,3)}</div>
+                            <div>
+                                <div>{JSON.stringify(val,undefined,3)}</div>
+                                <button onClick={()=>{setAccepted(val.orderID)}}>Accept</button>
+                                <button>Reject</button>
+                            </div>
                         )
                     })
                 }

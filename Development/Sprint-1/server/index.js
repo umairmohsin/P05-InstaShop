@@ -28,6 +28,7 @@ const {getclientProfile} = require('./rest_apis/client/clientProfile')
 const {getAllInfluencers} = require('./rest_apis/client/viewInfluencers')
 const { getPendingApprovals } = require('./rest_apis/client/viewpendingapprovals.js')
 const { getCompletedOrders} = require('./rest_apis/client/completedorders.js')
+const { updateAccept } = require('./rest_apis/client/changeacceptdb.js')
 
 
 
@@ -90,6 +91,9 @@ app.get('/influencercompletedorders', async(req,res) =>{
 
 app.get('/allInfProfiles', (authenticateUser), async(req,res) => {
     await getAllInfluencers(req, res)
+})
+app.post('/changeAccepted',async(req,res)=>{
+    await updateAccept(req,res)
 })
 
 //Influencer Profile
