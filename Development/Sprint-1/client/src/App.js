@@ -20,6 +20,8 @@ import HomePage from "./Pages/Organization View/HomePage/Homepage";
 import Completed from "./Pages/progtocomplete";
 import ApprovalsPending from "./Pages/clientpendingapprovals";
 import CompleteOrderList from "./Pages/completed";
+import InfluencerApprovalsPending from "./Pages/InflPendingApprovals";
+import InfluencerCompleteOrderList from "./Pages/InflCompletedOrders";
 
 const App = ()=>{
   return(
@@ -42,6 +44,8 @@ const App = ()=>{
           <Route path="/read" element={(<Completed />)}/>
           <Route path="/pendingapprovals" element={(<ApprovalsPending />)}/>
           <Route path="/completedorders" element={(<CompleteOrderList />)}/>
+          <Route path="/influencerpendingapprovals" element={(<InfluencerApprovalsPending />)}/>
+          <Route path="/influencercompletedorders" element={(<InfluencerCompleteOrderList />)}/>
         </Routes>
       </Router>
     </div>

@@ -84,6 +84,13 @@ app.get('/pendingapprovals', async(req,res) =>{
 app.get('/completedorders', async(req,res) =>{
     await  getCompletedOrders(req, res)    
 })
+
+app.get('/influencerpendingapprovals', async(req,res) =>{
+    await  getPendingApprovals(req, res)    
+})
+app.get('/influencercompletedorders', async(req,res) =>{
+    await  getCompletedOrders(req, res)    
+})
 // app.get("/pendingapprovals",async(req,res)=>{
 //     shapack2.find({},(err,result)=>{
 //         if(err){

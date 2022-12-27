@@ -51,10 +51,20 @@ const HomePage = ()=>{
   const navigate = useNavigate()
   const location = useLocation()
   const topending = () => {
-    navigate('/pendingapprovals', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
+    if(location.state.role === "Client"){
+      navigate('/pendingapprovals', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
+    }
+    else if(location.state.role === "Influencer"){
+      navigate('/influencerpendingapprovals', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
+    }
   }
   const toComplete = ()=>{
-    navigate('/completedorders', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
+    if(location.state.role === "Client"){
+      navigate('/completedorders', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
+    }
+    else if(location.state.role === "Influencer"){
+      navigate('/influencercompletedorders', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
+    }
   }
   // const email= location.state.email
   return (
