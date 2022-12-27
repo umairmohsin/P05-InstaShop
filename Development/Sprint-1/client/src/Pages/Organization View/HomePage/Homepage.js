@@ -9,14 +9,11 @@ import axios from 'axios';
 const HomePage = ()=>{
   
   const [allProfiles, setAllProfiles] = useState([])
-  const [allFetched, setAllFetched] = useState(false)
 
   useEffect( () => {
     axios.get('http://localhost:8000/allInfProfiles', {withCredentials: true})
     .then(response => response.data)
     .then(data => {
-      // console.log("Displaying fetched data")
-      console.log(data[0])
       const temp = data.slice(0,5)
       const profiles = temp.map(profile => {
         return (
@@ -28,25 +25,9 @@ const HomePage = ()=>{
           />
         )
       })
-      // console.log("Profiles", profiles[0])
       setAllProfiles(profiles)
     })
   }, [])
-
-
-  // if (allProfiles.length != 0) {
-  //   console.log("In all profiles")
-  //   const cards = allProfiles.map(profile => {
-  //     return (
-  //       <ProfileCards />
-  //     )
-  //   })
-
-  //   // console.log(cards)
-
-  //   // setAllProfiles(cards)
-  //   setAllFetched(true)
-  // }
   
   const navigate = useNavigate()
   const location = useLocation()
@@ -55,7 +36,7 @@ const HomePage = ()=>{
       navigate('/clientPendingapprovals', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
     }
     else if(location.state.role === "Influencer"){
-      navigate('/influencerpendingapprovals', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
+      navigate('/influencerPendingApprovals', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
     }
   }
   const toComplete = ()=>{
@@ -63,10 +44,11 @@ const HomePage = ()=>{
       navigate('/clientCompletedorders', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
     }
     else if(location.state.role === "Influencer"){
-      navigate('/influencercompletedorders', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
+      navigate('/influencerCompletedOrders', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
     }
   }
-  // const email= location.state.email
+  
+  
   return (
     <div className="homepage">
       <div className='homepagearea'>

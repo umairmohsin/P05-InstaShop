@@ -6,7 +6,7 @@ async function getPendingApprovals(req,res){
             res.send(err)
         }
         res.send(result)
-        console.log(result)
+        // console.log(result)
     })
 }
 

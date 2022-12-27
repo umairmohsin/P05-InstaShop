@@ -64,42 +64,29 @@ app.post('/create_announcement', (authenticateUser), async (req, res) => {
     await create_announcement(req, res)
 })
 
-
 app.get('/adminProfile' , (authenticateUser) , async(req,res) =>{
     await  getAdminProfile(req, res)    
 })
-app.get("/read",async(req,res)=>{
-    shapack.find({},(err,result)=>{
-        if(err){
-            res.send(err)
-        }
-        res.send(result)
-        // console.log(result)
-    })
-})
 
+
+// Pending Approvals
 app.get('/clientPendingapprovals', async(req,res) =>{
     await  getPendingApprovals(req, res)    
-})
-app.get('/clientCompletedorders', async(req,res) =>{
-    await  getCompletedOrders(req, res)    
 })
 
 app.get('/influencerpendingapprovals', async(req,res) =>{
     await  getPendingApprovals(req, res)    
 })
+
+// Completed Orders
+app.get('/clientCompletedorders', async(req,res) =>{
+    await  getCompletedOrders(req, res)    
+})
+
 app.get('/influencercompletedorders', async(req,res) =>{
     await  getCompletedOrders(req, res)    
 })
-// app.get("/pendingapprovals",async(req,res)=>{
-//     shapack2.find({},(err,result)=>{
-//         if(err){
-//             res.send(err)
-//         }
-//         res.send(result)
-//         // console.log(result)
-//     })
-// })
+
 
 app.get('/allInfProfiles', (authenticateUser), async(req,res) => {
     await getAllInfluencers(req, res)
