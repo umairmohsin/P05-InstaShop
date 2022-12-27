@@ -1,6 +1,8 @@
 import React from 'react';
 import './navbar.css'
 import logo from '../../images/logo.png'
+import Cookies from 'js-cookie'
+import jwt_decoded from 'jwt-decode'
 import {
   Nav,
   NavLink,
@@ -8,13 +10,14 @@ import {
   NavMenu,
   NavBtn,
   NavBtnLink,
-  NavBtnLink2,
 } from './NavbarElements';
-  
+
 const Navbar = () => {
-  if(localStorage.getItem("role") == "Admin") {
+  var decoded = jwt_decoded('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJpbGFsLnNoYWhpZEBnbWFpbC5jb218QWRtaW4iLCJpYXQiOjE2NzIwOTM4MTgsImV4cCI6MTY3MjA5NTYxOH0.Tm9LcJzkVh0wuYhI2xac1zyAbqP5GzfsJ3ay5NTx8So')
+  console.log(Cookies.get('jwt'))
+  console.log(decoded)
+  if(decoded.id.slice(-5) == "Admin") {
     return (
-      <>
         <Nav>
           <Bars />
           <NavMenu>
@@ -38,13 +41,11 @@ const Navbar = () => {
             <NavBtnLink to='/login'>Sign Out</NavBtnLink>
           </NavBtn>
         </Nav>
-      </>
     );
   }
   
-  else if(localStorage.getItem("role") == "Client") {
+  else if(decoded.id.slice(-6) == "Client") {
     return (
-      <>
         <Nav>
           <Bars />
           <NavMenu>
@@ -71,13 +72,11 @@ const Navbar = () => {
             <NavBtnLink to='/login'>Sign Out</NavBtnLink>
           </NavBtn>
         </Nav>
-      </>
     );
   }
 
-  if(localStorage.getItem("role") == "Influencer") {
+  else if(decoded.id.slice(-10) == "Influencer") {
     return (
-      <>
         <Nav>
           <Bars />
           <NavMenu>
@@ -101,13 +100,11 @@ const Navbar = () => {
             <NavBtnLink to='/login'>Sign Out</NavBtnLink>
           </NavBtn>
         </Nav>
-      </>
     );
   }
 
-  if(!localStorage.getItem("role")) {
+  else{
     return (
-      <>
         <Nav>
           <Bars />
           <NavMenu>
@@ -116,7 +113,6 @@ const Navbar = () => {
             </NavLink>
           </NavMenu>
         </Nav>
-      </>
     );
   }
 };
