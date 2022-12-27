@@ -17,6 +17,11 @@ import TestCard from "./Pages/Organization View/Endorsee Profile/testcard";
 import SignUp from "./Pages/SignUp/signup";
 import ChangePass from "./Pages/Misc/Change Pass/ChangePass";
 import HomePage from "./Pages/Organization View/HomePage/Homepage";
+import Completed from "./Pages/progtocomplete";
+import ApprovalsPending from "./Pages/clientpendingapprovals";
+import CompleteOrderList from "./Pages/completed";
+import InfluencerApprovalsPending from "./Pages/InflPendingApprovals";
+import InfluencerCompleteOrderList from "./Pages/InflCompletedOrders";
 
 const App = ()=>{
   return(
@@ -36,6 +41,11 @@ const App = ()=>{
           <Route path="/announce" element={(<Announce />)}/>
           <Route path="/adminprofile" element={(<EditAdminProfile />)}/>
           <Route path="/home" element={(<HomePage />)}/>
+          <Route path="/read" element={(<Completed />)}/>
+          <Route path="/pendingapprovals" element={(<ApprovalsPending />)}/>
+          <Route path="/completedorders" element={(<CompleteOrderList />)}/>
+          <Route path="/influencerpendingapprovals" element={(<InfluencerApprovalsPending />)}/>
+          <Route path="/influencercompletedorders" element={(<InfluencerCompleteOrderList />)}/>
         </Routes>
       </Router>
     </div>
