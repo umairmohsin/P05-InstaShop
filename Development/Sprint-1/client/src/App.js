@@ -18,8 +18,8 @@ import SignUp from "./Pages/SignUp/signup";
 import ChangePass from "./Pages/Misc/Change Pass/ChangePass";
 import HomePage from "./Pages/Organization View/HomePage/Homepage";
 import Completed from "./Pages/progtocomplete";
-import ApprovalsPending from "./Pages/clientpendingapprovals";
-import CompleteOrderList from "./Pages/completed";
+import ClientApprovalsPending from "./Pages/clientPendingApprovals";
+import ClientCompleteOrderList from "./Pages/clientCompletedOrders";
 import InfluencerApprovalsPending from "./Pages/InflPendingApprovals";
 import InfluencerCompleteOrderList from "./Pages/InflCompletedOrders";
 
@@ -42,8 +42,8 @@ const App = ()=>{
           <Route path="/adminprofile" element={(<EditAdminProfile />)}/>
           <Route path="/home" element={(<HomePage />)}/>
           <Route path="/read" element={(<Completed />)}/>
-          <Route path="/pendingapprovals" element={(<ApprovalsPending />)}/>
-          <Route path="/completedorders" element={(<CompleteOrderList />)}/>
+          <Route path="/clientPendingapprovals" element={(<ClientApprovalsPending />)}/>
+          <Route path="/clientCompletedorders" element={(<ClientCompleteOrderList />)}/>
           <Route path="/influencerpendingapprovals" element={(<InfluencerApprovalsPending />)}/>
           <Route path="/influencercompletedorders" element={(<InfluencerCompleteOrderList />)}/>
         </Routes>

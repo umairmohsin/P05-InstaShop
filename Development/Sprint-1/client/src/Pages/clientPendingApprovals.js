@@ -5,7 +5,7 @@ import axios from 'axios'
 import { useState } from 'react'
 // const shapack = require('./database/Schema/Announcement')
 // const shapack = require("../../../server/database/Schema/Announcement")
-const CompleteOrderList = ()=>{
+const ClientApprovalsPending = ()=>{
     const location = useLocation()
     const email = location.state.email
 
@@ -13,7 +13,7 @@ const CompleteOrderList = ()=>{
     const [pendinglist,setpendinglist] = useState([])
     const [newpendlist, setnewpendlist] = useState([])
     useEffect(()=>{
-        axios.get("http://localhost:8000/completedorders").then(
+        axios.get("http://localhost:8000/clientPendingapprovals").then(
             (res)=>{
                 console.log(res.data)
                 setpendinglist(res.data)
@@ -26,7 +26,7 @@ const CompleteOrderList = ()=>{
 
     const myfunc = ()=>{
         pendinglist.map((val,key)=>{
-            if(val.clientEmail === email && val.status ==="Completed" && val.acceptedByClient === true){
+            if(val.clientEmail === email && val.status ==="Completed" && val.acceptedByClient === false){
                 newpendlist[key] = val
             }
         })
@@ -51,4 +51,4 @@ const CompleteOrderList = ()=>{
         </div>
     )
 }
-export default CompleteOrderList;
+export default ClientApprovalsPending;

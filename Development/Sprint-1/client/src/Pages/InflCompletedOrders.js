@@ -7,6 +7,7 @@ import { useState } from 'react'
 // const shapack = require("../../../server/database/Schema/Announcement")
 const InfluencerCompleteOrderList = ()=>{
     const location = useLocation()
+    // console.log("location.state is", location.state)
     const email = location.state.email
 
         // e.preventDefault();

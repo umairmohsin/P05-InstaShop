@@ -78,10 +78,10 @@ app.get("/read",async(req,res)=>{
     })
 })
 
-app.get('/pendingapprovals', async(req,res) =>{
+app.get('/clientPendingapprovals', async(req,res) =>{
     await  getPendingApprovals(req, res)    
 })
-app.get('/completedorders', async(req,res) =>{
+app.get('/clientCompletedorders', async(req,res) =>{
     await  getCompletedOrders(req, res)    
 })
 

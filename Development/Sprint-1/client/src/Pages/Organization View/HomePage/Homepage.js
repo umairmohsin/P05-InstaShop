@@ -52,7 +52,7 @@ const HomePage = ()=>{
   const location = useLocation()
   const topending = () => {
     if(location.state.role === "Client"){
-      navigate('/pendingapprovals', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
+      navigate('/clientPendingapprovals', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
     }
     else if(location.state.role === "Influencer"){
       navigate('/influencerpendingapprovals', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
@@ -60,7 +60,7 @@ const HomePage = ()=>{
   }
   const toComplete = ()=>{
     if(location.state.role === "Client"){
-      navigate('/completedorders', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
+      navigate('/clientCompletedorders', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
     }
     else if(location.state.role === "Influencer"){
       navigate('/influencercompletedorders', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
