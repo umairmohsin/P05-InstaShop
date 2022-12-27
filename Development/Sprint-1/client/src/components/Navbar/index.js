@@ -34,19 +34,19 @@ const Navbar = () => {
         <Nav>
           <Bars />
           <NavMenu>
-            <NavLink to='/home' activeStyle>
+            <NavLink to='/home' activestyle="true">
               <img src={logo} />
             </NavLink>
-            <NavLink to='/home' activeStyle>
+            <NavLink to='/home' activestyle="true">
               Home
             </NavLink>
-            <NavLink to='/announce' activeStyle>
+            <NavLink to='/announce' activestyle="true">
               Send Announcement
             </NavLink>
-            <NavLink to='/access' activeStyle>
+            <NavLink to='/access' activestyle="true">
               Restrict/Remove Access
             </NavLink>
-            <NavLink to='/adminprofile' activeStyle>
+            <NavLink to='/adminprofile' activestyle="true">
               Profile
             </NavLink>
           </NavMenu>
@@ -62,22 +62,22 @@ const Navbar = () => {
         <Nav>
           <Bars />
           <NavMenu>
-            <NavLink to='/clienthome' activeStyle>
+            <NavLink to='/clienthome' activestyle="true">
               <img src={logo} />
             </NavLink>
             <form className='searchform'>
               <input className='searchinput' name='search' id='search' type="text" placeholder='Search for an influencer'/>
             </form>
-            <NavLink to='/clienthome' activeStyle>
+            <NavLink to='/clienthome' activestyle="true">
               Home
             </NavLink>
-            <NavLink to='/clientorders' activeStyle>
+            <NavLink to='/clientorders' activestyle="true">
               Orders
             </NavLink>
-            <NavLink to='/clientannounce' activeStyle>
+            <NavLink to='/clientannounce' activestyle="true">
               Announcements
             </NavLink>
-            <NavLink to='/clientprofile' activeStyle>
+            <NavLink to='/clientprofile' activestyle="true">
               Profile
             </NavLink>
           </NavMenu>
@@ -93,19 +93,19 @@ const Navbar = () => {
         <Nav>
           <Bars />
           <NavMenu>
-            <NavLink to='/influencerhome' activeStyle>
+            <NavLink to='/influencerhome' activestyle="true">
               <img src={logo} />
             </NavLink>
-            <NavLink to='/influencerhome' activeStyle>
+            <NavLink to='/influencerhome' activestyle="true">
               Home
             </NavLink>
-            <NavLink to='/influencerorders' activeStyle>
+            <NavLink to='/influencerorders' activestyle="true">
               Orders
             </NavLink>
-            <NavLink to='/influencerannounce' activeStyle>
+            <NavLink to='/influencerannounce' activestyle="true">
               Announcement
             </NavLink>
-            <NavLink to='/influencerprofile' activeStyle>
+            <NavLink to='/influencerprofile' activestyle="true">
               Profile
             </NavLink>
           </NavMenu>
@@ -121,7 +121,7 @@ const Navbar = () => {
         <Nav>
           <Bars />
           <NavMenu>
-            <NavLink to='/home' activeStyle>
+            <NavLink to='/home' activestyle="true">
               <img src={logo} />
             </NavLink>
           </NavMenu>

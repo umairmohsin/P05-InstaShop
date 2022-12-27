@@ -22,8 +22,10 @@ const authenticateUser = async (req, res, next) => {
     try{
         // console.log("IN AUTHENTICATE USER")
         const token = req.cookies.jwt
-        // console.log("Token at backend", token)
+        // console.log("Token sent by frontend", token)
+        // console.log("\nSecretStr at backend", secretStr)
         const decodedToken = await verify(token, secretStr)
+        // console.log("Decoded token is", decodedToken)
         const tokenData = decodedToken.id.split("|")
         const email = tokenData[0]
         const role = tokenData[1] 
