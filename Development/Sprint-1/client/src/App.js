@@ -18,10 +18,10 @@ import SignUp from "./Pages/SignUp/signup";
 import ChangePass from "./Pages/Misc/Change Pass/ChangePass";
 import HomePage from "./Pages/Organization View/HomePage/Homepage";
 import Completed from "./Pages/progtocomplete";
-import ApprovalsPending from "./Pages/clientpendingapprovals";
-import CompleteOrderList from "./Pages/completed";
-import InfluencerApprovalsPending from "./Pages/InflPendingApprovals";
-import InfluencerCompleteOrderList from "./Pages/InflCompletedOrders";
+import ApprovalsPending from "./Pages/Organization View/Orders/Pending/ClientPendingApprovals";
+import InfluencerApprovalsPending from "./Pages/Endorsee View/Orders/Pending/InfluencerPendingApprovals";
+import InfluencerCompleteOrderList from "./Pages/Endorsee View/Orders/Completed/InfluencerCompletedOrders";
+import CompleteOrderList from "./Pages/Organization View/Orders/Completed/ClientCompletedOrders";
 
 const App = ()=>{
   return(

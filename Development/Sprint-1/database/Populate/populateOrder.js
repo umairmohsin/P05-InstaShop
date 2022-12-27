@@ -21,7 +21,7 @@ async function populateOrder(){
     await createOrder(9, 'lukedamant@gmail.com', 'salman.masood@gmail.com' , 8000, "Completed")
     
 
-    // stauts = "Completed", acceptedByClient = true, ratingGiven = false
+    // status = "Completed", acceptedByClient = true, ratingGiven = false
     await createOrder(10, 'xeetechcare@gmail.com', 'salman.masood@gmail.com' , 1700, "Completed", true)
     await createOrder(11, 'xeetechcare@gmail.com', 'hassan.raza@gmail.com' , 5500, "Completed", true)
     await createOrder(12, 'lukedamant@gmail.com', 'umair.mohsin@gmail.com' , 6300, "Completed", true)
