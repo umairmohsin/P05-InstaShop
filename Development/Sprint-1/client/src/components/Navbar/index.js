@@ -4,6 +4,8 @@ import './navbar.css'
 import logo from '../../images/logo.png'
 import Cookies from 'js-cookie'
 import jwt_decoded from 'jwt-decode'
+import axios from 'axios';
+
 import {
   Nav,
   NavLink,
@@ -14,10 +16,20 @@ import {
 } from './NavbarElements';
 
 const Navbar = () => {
-  var decoded = jwt_decoded('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJpbGFsLnNoYWhpZEBnbWFpbC5jb218QWRtaW4iLCJpYXQiOjE2NzIwOTM4MTgsImV4cCI6MTY3MjA5NTYxOH0.Tm9LcJzkVh0wuYhI2xac1zyAbqP5GzfsJ3ay5NTx8So')
-  console.log(Cookies.get('jwt'))
-  console.log(decoded)
-  if(decoded.id.slice(-5) == "Admin") {
+  const location = useLocation()
+  let role = " "
+  if (location.state !== null){
+    role = location.state.role
+  }
+  
+  const navigate = useNavigate()
+
+  const logout = async () => {
+    await axios.get('http://localhost:8000/logout', {withCredentials: true})
+    navigate('/')  
+  }
+  
+  if(role && role == "Admin") {
     return (
         <Nav>
           <Bars />
@@ -39,13 +51,13 @@ const Navbar = () => {
             </NavLink>
           </NavMenu>
           <NavBtn>
-            <NavBtnLink to='/login'>Sign Out</NavBtnLink>
+            <NavBtnLink onClick={logout}>Sign Out</NavBtnLink>
           </NavBtn>
         </Nav>
     );
   }
   
-  else if(decoded.id.slice(-6) == "Client") {
+  else if(role && role == "Client") {
     return (
         <Nav>
           <Bars />
@@ -70,13 +82,13 @@ const Navbar = () => {
             </NavLink>
           </NavMenu>
           <NavBtn>
-            <NavBtnLink to='/login'>Sign Out</NavBtnLink>
+            <NavBtnLink onClick={logout}>Sign Out</NavBtnLink>
           </NavBtn>
         </Nav>
     );
   }
 
-  else if(decoded.id.slice(-10) == "Influencer") {
+  else if(role && role == "Influencer") {
     return (
         <Nav>
           <Bars />
@@ -98,7 +110,7 @@ const Navbar = () => {
             </NavLink>
           </NavMenu>
           <NavBtn>
-            <NavBtnLink to='/login'>Sign Out</NavBtnLink>
+            <NavBtnLink onClick={logout}>Sign Out</NavBtnLink>
           </NavBtn>
         </Nav>
     );

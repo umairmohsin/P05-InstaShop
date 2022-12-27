@@ -15,8 +15,6 @@ const {create_announcement} = require('./rest_apis/admin/createAnnouncement')
 const {Signup}  = require('./rest_apis/Signup')
 const {changePasswordGeneral} = require('./rest_apis/changePasswordGeneral')
 
-const shapack = require('../server/database/Schema/Announcement')
-const shapack2 = require('../server/database/Schema/Order')
 //Admin
 // const {changePassword} = require('./rest_apis/admin/changePassword')
 // const {create_announcement} = require('./rest_apis/admin/createAnnouncement')
@@ -107,6 +105,7 @@ app.post('/changeAccepted',async(req,res)=>{
 
 // general
 app.get('/logout', (req, res) => {
+    // console.log("Backend Logout")
     res.cookie('jwt', '', {maxAge:1})
     res.status(200).send()
 })

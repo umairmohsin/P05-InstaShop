@@ -43,7 +43,8 @@ const Login = ()=>{
         // console.log("hello")
         // console.log(newEntry)
         try{
-          await axios.post('http://localhost:8000/login', newEntry, {withCredentials: true});
+          const res = await axios.post('http://localhost:8000/login', newEntry, {withCredentials: true});
+          // console.log("After loggin in, data in req", res)
           navigate('/home', {state:{role:role,email:email,pwd:password}})
         }
         catch (err) {

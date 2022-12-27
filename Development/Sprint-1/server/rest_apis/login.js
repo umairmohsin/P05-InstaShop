@@ -12,6 +12,7 @@ async function login(req, res){
             email: email
         })
         if (user.password === req.body.password){
+            
             const token = createToken(req.body.email+"|"+ user.role)
             
             res.cookie("jwt", token, {httpOnly:true, sameSite:true})
