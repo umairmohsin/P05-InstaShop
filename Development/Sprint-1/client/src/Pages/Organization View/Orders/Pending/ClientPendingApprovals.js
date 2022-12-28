@@ -40,6 +40,12 @@ const ClientApprovalsPending = ()=>{
         await axios.post("http://localhost:8000/changeAccepted",acceptData)
 
     }
+    const setStatus = async(myID)=>{
+        const acceptData = {ans:"Ongoing", email:email, myID:myID}
+        // console.log(acceptData)
+        await axios.post("http://localhost:8000/changeStatus",acceptData)
+
+    }
     // shapack();
     return(
         <div>
@@ -58,7 +64,7 @@ const ClientApprovalsPending = ()=>{
                                 </div>
 
                                 <button onClick={()=>{setAccepted(val.orderID)}}>Accept</button> 
-                                <button>Reject</button>
+                                <button onClick={()=>{setStatus(val.orderID)}}>Reject</button>
                             </div>
                         )
                     })
