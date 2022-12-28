@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
+import './ClientPendingApprovals.css'
 
 import axios from 'axios'
 import { useState } from 'react'
@@ -42,15 +43,21 @@ const ClientApprovalsPending = ()=>{
     // shapack();
     return(
         <div>
-        hello  boss howsat
         {
-            <div>
+            <div className='ipa'>
+                <h2>Here are your orders pending approval by client</h2>
                 {
                     newpendlist.map((val,key)=>{
                         return(
-                            <div>
-                                <div>{JSON.stringify(val,undefined,3)}</div>
-                                <button onClick={()=>{setAccepted(val.orderID)}}>Accept</button>
+                            <div className='clientPendingApprovalCard'>
+                                <div>
+                                    <p>Order ID: {JSON.parse(JSON.stringify(val,undefined,3)).orderID}</p>
+                                    <p>Client Email: {JSON.parse(JSON.stringify(val,undefined,3)).clientEmail}</p>
+                                    <p>Price: PKR{JSON.parse(JSON.stringify(val,undefined,3)).price}</p>
+                                    <p>Status: {JSON.parse(JSON.stringify(val,undefined,3)).status}</p>
+                                </div>
+
+                                <button onClick={()=>{setAccepted(val.orderID)}}>Accept</button> 
                                 <button>Reject</button>
                             </div>
                         )
@@ -61,4 +68,6 @@ const ClientApprovalsPending = ()=>{
         </div>
     )
 }
+
+
 export default ClientApprovalsPending;

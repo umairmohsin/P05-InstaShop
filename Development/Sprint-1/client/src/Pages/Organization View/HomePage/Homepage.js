@@ -31,6 +31,8 @@ const HomePage = ()=>{
   
   const navigate = useNavigate()
   const location = useLocation()
+
+  // console.log("Location.state: ", location.state)
   
   const jobOffers = () => {
     if(location.state.role === "Client"){
@@ -42,6 +44,15 @@ const HomePage = ()=>{
   }
 
   const ongoingOrders = () => {
+    if(location.state.role === "Client"){
+
+    }
+    else if (location.state.role === "Influencer"){
+      
+    }
+  }
+
+  const rejectedOrders = () => {
     if(location.state.role === "Client"){
 
     }
@@ -84,7 +95,7 @@ const HomePage = ()=>{
           <button onClick={ongoingOrders}>Ongoing Orders</button>
           <button onClick={topending}>Pending approvals</button>
           <button onClick={toComplete}>Completed Orders</button>
-          <button onClick={topending}>Rejected Orders</button>
+          <button onClick={rejectedOrders}>Rejected Orders</button>
         </div>
       </div>
 

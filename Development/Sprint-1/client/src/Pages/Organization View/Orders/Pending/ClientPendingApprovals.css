@@ -1,11 +1,11 @@
-.ico{
+.ipa{
     text-align: center;
     align-items: center;
     justify-content: center;
     color: white;
 }
 
-.clientCompletedOrderCard {
+.clientPendingApprovalCard {
     position: relative;
     left: 10%;
     text-align: center;

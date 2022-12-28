@@ -3,7 +3,7 @@ const secretStr = "InstaShop-Database2022-SecretString-70483473"
 
 const createToken = (id) => {
     // 30 minute session
-    console.log("Creating Token")
+    // console.log("Creating Token")
     return jwt.sign({id}, secretStr, {expiresIn: 1800})
 }
 

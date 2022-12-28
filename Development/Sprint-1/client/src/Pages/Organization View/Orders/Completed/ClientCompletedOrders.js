@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
+import './ClientCompletedOrders.css'
 
 import axios from 'axios'
 import { useState } from 'react'
@@ -36,13 +37,20 @@ const ClientCompleteOrderList = ()=>{
     // shapack();
     return(
         <div>
-        hello  boss howsat
         {
-            <div>
+            <div className='ico'>
+                <h2>Here are your completed orders</h2>
                 {
                     newpendlist.map((val,key)=>{
                         return(
-                            <div>{JSON.stringify(val,undefined,3)}</div>
+                            <div className='clientCompletedOrderCard'>
+                                <div>
+                                    <p>Order ID: {JSON.parse(JSON.stringify(val,undefined,3)).orderID}</p>
+                                    <p>Client Email: {JSON.parse(JSON.stringify(val,undefined,3)).clientEmail}</p>
+                                    <p>Price: PKR{JSON.parse(JSON.stringify(val,undefined,3)).price}</p>
+                                    <p>Status: {JSON.parse(JSON.stringify(val,undefined,3)).status}</p>
+                                </div>
+                            </div>
                         )
                     })
                 }
