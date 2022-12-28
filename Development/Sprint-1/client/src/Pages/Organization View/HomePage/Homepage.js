@@ -8,29 +8,35 @@ import axios from 'axios';
 
 const HomePage = ()=>{
   
-  const [allProfiles, setAllProfiles] = useState([])
-
-  useEffect( () => {
-    axios.get('http://localhost:8000/allInfProfiles', {withCredentials: true})
-    .then(response => response.data)
-    .then(data => {
-      const temp = data.slice(0,5)
-      const profiles = temp.map(profile => {
-        return (
-          <ProfileCards 
-            name = {profile.name.first}
-            email = {profile.email}
-            niche = {profile.niche}
-            rating = {profile.rating}
-          />
-        )
-      })
-      setAllProfiles(profiles)
-    })
-  }, [])
-  
   const navigate = useNavigate()
   const location = useLocation()
+
+  const [allProfiles, setAllProfiles] = useState([])
+  const role = location.state.role
+
+  
+  useEffect( () => {
+    if (role === "Client"){
+      axios.get('http://localhost:8000/allInfProfiles', {withCredentials: true})
+      .then(response => response.data)
+      .then(data => {
+        const temp = data.slice(0,5)
+        const profiles = temp.map(profile => {
+          return (
+            <ProfileCards 
+              name = {profile.name.first}
+              niche = {profile.niche}
+              rating = {profile.rating}
+              clientEmail = {location.state.email}
+              influencerEmail = {profile.email}
+            />
+          )
+        })
+        setAllProfiles(profiles)
+      })
+    }
+    
+  }, [])
 
   // console.log("Location.state: ", location.state)
   

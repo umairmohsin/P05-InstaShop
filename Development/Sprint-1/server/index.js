@@ -28,7 +28,7 @@ const { getPendingApprovals } = require('./rest_apis/client/viewpendingapprovals
 const { getCompletedOrders} = require('./rest_apis/client/completedorders.js')
 const { updateAccept } = require('./rest_apis/client/changeacceptdb.js')
 const { updateStatus } = require('./rest_apis/client/changeStatusToOngoing.js')
-
+const { placeOrder } = require('./rest_apis/client/placeOrder')
 
 
 const PORT = process.env.PORT || 8000
@@ -97,6 +97,11 @@ app.post('/changeAccepted',async(req,res)=>{
 app.post('/changeStatus',async(req,res)=>{
     await updateStatus(req,res)
 })
+
+app.post('/placeOrder', async(req,res)=>{
+    await placeOrder(req,res)
+})
+
 //Influencer Profile
 // app.get('/getInfluencerProfile' , (authenticateUser) , async(req,res) =>{
 //     await  getInfluencerProfile(req, res)    
