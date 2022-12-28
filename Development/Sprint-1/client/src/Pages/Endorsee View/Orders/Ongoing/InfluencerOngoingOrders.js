@@ -37,6 +37,13 @@ const InfluencerOngoingOrders = ()=>{
     }
     myfunc()
 
+    const setStatus1 = async(myID)=>{
+        const acceptData = {ans:"Completed", email:email, myID:myID}
+        // console.log(acceptData)
+        await axios.post("http://localhost:8000/changeStatus",acceptData)
+
+    }
+
     return(
         <div>
         {
@@ -52,6 +59,8 @@ const InfluencerOngoingOrders = ()=>{
                                     <p>Price: PKR{JSON.parse(JSON.stringify(val,undefined,3)).price}</p>
                                     <p>Status: {JSON.parse(JSON.stringify(val,undefined,3)).status}</p>
                                 </div>
+
+                                <button onClick={()=>{setStatus1(val.orderID)}}>Completed</button> 
                             </div>
                         )
                     })

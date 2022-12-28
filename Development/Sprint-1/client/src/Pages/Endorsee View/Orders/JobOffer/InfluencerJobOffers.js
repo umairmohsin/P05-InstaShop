@@ -46,7 +46,6 @@ const InfluencerJobOffers = ()=>{
         const acceptData = {ans:"Rejected", email:email, myID:myID}
         // console.log(acceptData)
         await axios.post("http://localhost:8000/changeStatus",acceptData)
-
     }
     
     return(
