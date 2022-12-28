@@ -15,7 +15,6 @@ const {create_announcement} = require('./rest_apis/admin/createAnnouncement')
 const {Signup}  = require('./rest_apis/Signup')
 const {changePasswordGeneral} = require('./rest_apis/changePasswordGeneral')
 
-
 //Admin
 // const {changePassword} = require('./rest_apis/admin/changePassword')
 // const {create_announcement} = require('./rest_apis/admin/createAnnouncement')
@@ -24,6 +23,11 @@ const{getAdminProfile} = require('./rest_apis/admin/adminProfile')
 const{getInfluencerProfile} = require('./rest_apis/influencer/InfluencerProfile')
 // Client
 const {getclientProfile} = require('./rest_apis/client/clientProfile')
+const {getAllInfluencers} = require('./rest_apis/client/viewInfluencers')
+const { getPendingApprovals } = require('./rest_apis/client/viewpendingapprovals.js')
+const { getCompletedOrders} = require('./rest_apis/client/completedorders.js')
+const { updateAccept } = require('./rest_apis/client/changeacceptdb.js')
+
 
 
 const PORT = process.env.PORT || 8000
@@ -59,9 +63,35 @@ app.post('/create_announcement', (authenticateUser), async (req, res) => {
     await create_announcement(req, res)
 })
 
-
 app.get('/adminProfile' , (authenticateUser) , async(req,res) =>{
     await  getAdminProfile(req, res)    
+})
+
+
+// Pending Approvals
+app.get('/clientPendingapprovals', async(req,res) =>{
+    await  getPendingApprovals(req, res)    
+})
+
+app.get('/influencerpendingapprovals', async(req,res) =>{
+    await  getPendingApprovals(req, res)    
+})
+
+// Completed Orders
+app.get('/clientCompletedorders', async(req,res) =>{
+    await  getCompletedOrders(req, res)    
+})
+
+app.get('/influencercompletedorders', async(req,res) =>{
+    await  getCompletedOrders(req, res)    
+})
+
+
+app.get('/allInfProfiles', (authenticateUser), async(req,res) => {
+    await getAllInfluencers(req, res)
+})
+app.post('/changeAccepted',async(req,res)=>{
+    await updateAccept(req,res)
 })
 
 //Influencer Profile
@@ -75,6 +105,7 @@ app.get('/adminProfile' , (authenticateUser) , async(req,res) =>{
 
 // general
 app.get('/logout', (req, res) => {
+    // console.log("Backend Logout")
     res.cookie('jwt', '', {maxAge:1})
     res.status(200).send()
 })

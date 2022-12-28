@@ -24,12 +24,12 @@ const Login = ()=>{
 
 
     const signup = () =>{
-      navigate('/signup')
+      navigate('/signup', {state:{role:role,email:email,pwd:password}})
      
     }
 
     const ChangePassword = () => {
-      navigate('/ChangePass')
+      navigate('/ChangePass', {state:{role:role,email:email,pwd:password}})
     }
 
 
@@ -43,8 +43,9 @@ const Login = ()=>{
         // console.log("hello")
         // console.log(newEntry)
         try{
-          await axios.post('http://localhost:8000/login', newEntry, {withCredentials: true});
-          navigate('/home')
+          const res = await axios.post('http://localhost:8000/login', newEntry, {withCredentials: true});
+          // console.log("After loggin in, data in req", res)
+          navigate('/home', {state:{role:role,email:email,pwd:password}})
         }
         catch (err) {
             console.log("ERROR")
@@ -60,8 +61,8 @@ const Login = ()=>{
         <h1 className='logintitle'>Sign In As</h1>
         
         <div className='signupOptions' value = {role} onChange={(e)=>setRole(e.target.value)}>
-          <input type="radio" value="Client" name='mygroup' /> Organization
-          <input type="radio" value="Influencer" name='mygroup' /> Endorser
+          <input type="radio" value="Client" name='mygroup' /> Client
+          <input type="radio" value="Influencer" name='mygroup' /> Influencer
           <input type="radio" value="Admin" name='mygroup' /> Admin
         </div>
         

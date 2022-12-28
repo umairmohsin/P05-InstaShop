@@ -66,3 +66,17 @@ export const NavBtnLink = styled(Link)`
   /* Second Nav */
   margin-left: 24px;
 `;
+
+export const NavBtnLink2 = styled(Link)`
+  border-radius: 4px;
+  padding: 5px 10px;
+  background: #F47458;
+  color: #E7F6FA;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  /* Second Nav */
+  margin-left: 24px;
+`;
