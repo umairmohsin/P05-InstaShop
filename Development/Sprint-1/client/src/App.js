@@ -17,10 +17,18 @@ import TestCard from "./Pages/Organization View/Endorsee Profile/testcard";
 import SignUp from "./Pages/SignUp/signup";
 import ChangePass from "./Pages/Misc/Change Pass/ChangePass";
 import HomePage from "./Pages/Organization View/HomePage/Homepage";
+
+import ClientJobOffers from "./Pages/Organization View/Orders/JobOffer/ClientJobOffers"
+import ClientOngoingOrders from "./Pages/Organization View/Orders/Ongoing/ClientOngoingOrders"
 import ClientApprovalsPending from "./Pages/Organization View/Orders/Pending/ClientPendingApprovals";
+import ClientCompleteOrderList from "./Pages/Organization View/Orders/Completed/ClientCompletedOrders";
+import RejectedByInfluencer from "./Pages/Organization View/Orders/Rejected/RejectedByInfluencer"
+
+import InfluencerJobOffers from "./Pages/Endorsee View/Orders/JobOffer/InfluencerJobOffers"
+import InfluencerOngoingOrders from "./Pages/Endorsee View/Orders/Ongoing/InfluencerOngoingOrders";
 import InfluencerApprovalsPending from "./Pages/Endorsee View/Orders/Pending/InfluencerPendingApprovals";
 import InfluencerCompleteOrderList from "./Pages/Endorsee View/Orders/Completed/InfluencerCompletedOrders";
-import ClientCompleteOrderList from "./Pages/Organization View/Orders/Completed/ClientCompletedOrders";
+import RejectedJobOffer from "./Pages/Endorsee View/Orders/Rejected/RejectedJobOffer"
 
 const App = ()=>{
   return(
@@ -40,10 +48,19 @@ const App = ()=>{
           <Route path="/announce" element={(<Announce />)}/>
           <Route path="/adminprofile" element={(<EditAdminProfile />)}/>
           <Route path="/home" element={(<HomePage />)}/>
+          
+          <Route path="/clientJobOffers" element={(<ClientJobOffers />)}/>
+          <Route path="/clientOngoingOrders" element={(<ClientOngoingOrders />)}/>
           <Route path="/clientPendingapprovals" element={(<ClientApprovalsPending />)}/>
           <Route path="/clientCompletedorders" element={(<ClientCompleteOrderList />)}/>
+          <Route path="/clientRejectedOrders" element={(<RejectedByInfluencer />)}/>
+
+          <Route path="/influencerJobOffers" element={(<InfluencerJobOffers />)}/>
+          <Route path="/influencerOngoingOrders" element={(<InfluencerOngoingOrders />)}/>
           <Route path="/influencerPendingApprovals" element={(<InfluencerApprovalsPending />)}/>
           <Route path="/influencerCompletedOrders" element={(<InfluencerCompleteOrderList />)}/>
+          <Route path="/influencerRejectedOrders" element={(<RejectedJobOffer />)}/>
+
         </Routes>
       </Router>
     </div>

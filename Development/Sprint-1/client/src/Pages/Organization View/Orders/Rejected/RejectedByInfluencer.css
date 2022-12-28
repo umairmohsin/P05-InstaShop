@@ -1,0 +1,20 @@
+.rbi{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.rejectedByInfluencerCard {
+    position: relative;
+    left: 10%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    width: 80%;
+    background-color: #395B64;
+    color: white;
+    border-radius: 0.5rem;
+    height: 9rem;
+}

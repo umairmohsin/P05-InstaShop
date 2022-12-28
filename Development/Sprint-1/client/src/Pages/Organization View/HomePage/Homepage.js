@@ -36,28 +36,34 @@ const HomePage = ()=>{
   
   const jobOffers = () => {
     if(location.state.role === "Client"){
+      navigate('/clientJobOffers', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
 
     }
     else if (location.state.role === "Influencer"){
-
+      navigate('/influencerJobOffers', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
+      
     }
   }
 
   const ongoingOrders = () => {
     if(location.state.role === "Client"){
+      navigate('/clientOngoingOrders', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
 
     }
     else if (location.state.role === "Influencer"){
-      
+      navigate('/influencerOngoingOrders', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
+
     }
   }
 
   const rejectedOrders = () => {
     if(location.state.role === "Client"){
+      navigate('/clientRejectedOrders', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
 
     }
     else if (location.state.role === "Influencer"){
-      
+      navigate('/influencerRejectedOrders', {state:{role:location.state.role,email:location.state.email,pwd:location.state.pwd}})
+
     }
   }
 

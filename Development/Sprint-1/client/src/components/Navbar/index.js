@@ -62,13 +62,13 @@ const Navbar = () => {
         <Nav>
           <Bars />
           <NavMenu>
-            <NavLink to='/clienthome' activestyle="true">
+            <NavLink to='/home' activestyle="true">
               <img src={logo} />
             </NavLink>
             <form className='searchform'>
               <input className='searchinput' name='search' id='search' type="text" placeholder='Search for an influencer'/>
             </form>
-            <NavLink to='/clienthome' activestyle="true">
+            <NavLink to='/home' activestyle="true">
               Home
             </NavLink>
             <NavLink to='/clientorders' activestyle="true">
@@ -93,10 +93,10 @@ const Navbar = () => {
         <Nav>
           <Bars />
           <NavMenu>
-            <NavLink to='/influencerhome' activestyle="true">
+            <NavLink to='/home' activestyle="true">
               <img src={logo} />
             </NavLink>
-            <NavLink to='/influencerhome' activestyle="true">
+            <NavLink to='/home' activestyle="true">
               Home
             </NavLink>
             <NavLink to='/influencerorders' activestyle="true">
