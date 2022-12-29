@@ -9,8 +9,8 @@ import { useState } from 'react'
 const ClientCompleteOrderList = ()=>{
     const location = useLocation()
     const email = location.state.email
-
-        // e.preventDefault();
+    const role = location.state.role
+    // e.preventDefault();
     const [pendinglist,setpendinglist] = useState([])
     const [newpendlist, setnewpendlist] = useState([])
     useEffect(()=>{
@@ -50,10 +50,19 @@ const ClientCompleteOrderList = ()=>{
     GetRatingDB(api_url);
 
     const sendRating = async(myrating)=>{
+
+        if(location.state.role ==="Client"){
         const acceptData ={ email:email,  myrating: myrating} 
         // console.log(acceptData);
         await axios.post("http://localhost:8000/RatingsSend" , acceptData);
     }
+    
+    else if(location.state.role ==="Influencer"){
+        const acceptData ={ email:email,  myrating: myrating} 
+        console.log("is it over here ?");
+        await axios.post("http://localhost:8000/RatingsSendInfluencer" , acceptData);
+    }
+}
 
 
     return(

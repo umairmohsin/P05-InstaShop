@@ -34,7 +34,9 @@ const { placeOrder } = require('./rest_apis/client/placeOrder')
 // Rating
 const{updateRating} = require('./rest_apis/client/updateRating.js')
 const{getRating} = require('./rest_apis/client/getRating.js')
-const{sendRating} = require('./rest_apis/client/RatingSend')
+const{sendRating} = require('./rest_apis/client/RatingSend.js')
+const {sendRatingInfluencer} = require('./rest_apis/influencer/RatingsSendInfluencer.js')
+
 
 const PORT = process.env.PORT || 8000
 
@@ -119,6 +121,11 @@ app.get('/GetRatingClient' , async(req,res)=>{
 app.post('/RatingsSend', async(req,res)=>{
     await sendRating(req,res)
 })
+
+app.post('/RatingsSendInfluencer', async(req,res)=>{
+    await sendRatingInfluencer(req,res)
+})
+
 
 
 
