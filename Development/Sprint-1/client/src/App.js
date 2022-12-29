@@ -32,7 +32,7 @@ import RejectedJobOffer from "./Pages/Endorsee View/Orders/Rejected/RejectedJobO
 
 
 import RatingList from "./Pages/Organization View/Orders/Completed/RatingComp";
-import StarRating from "./Pages/Organization View/Orders/Completed/StarRating";
+// import StarRating from "./Pages/Organization View/Orders/Completed/StarRating";
 
 const App = ()=>{
   return(
