@@ -32,12 +32,12 @@ import RejectedJobOffer from "./Pages/Endorsee View/Orders/Rejected/RejectedJobO
 
 
 import RatingList from "./Pages/Organization View/Orders/Completed/RatingComp";
-
+import StarRating from "./Pages/Organization View/Orders/Completed/StarRating";
 
 const App = ()=>{
   return(
     <div>
-      <Router>
+    <Router>
       <Navbar />
         <Routes>
           {/* <Route path="/" element={(<ChangePass/>)}/> */}
@@ -65,14 +65,15 @@ const App = ()=>{
           <Route path="/influencerCompletedOrders" element={(<InfluencerCompleteOrderList />)}/>
           <Route path="/influencerRejectedOrders" element={(<RejectedJobOffer />)}/>
 
-
           <Route path="/clientRatings" element={(<RatingList />)}/>
 
-
-
         </Routes>
-      </Router>
+      </Router>     
+
+       {/* <StarRating />  */}
+
     </div>
+
   )
 }
 export default App;

@@ -10,6 +10,10 @@ const ClientCompleteOrderList = ()=>{
     const location = useLocation()
     const email = location.state.email
     const role = location.state.role
+
+    // const [rating, setRating] = useState(0);
+    // const [hover, setHover] = useState(0);
+
     // e.preventDefault();
     const [pendinglist,setpendinglist] = useState([])
     const [newpendlist, setnewpendlist] = useState([])
@@ -51,12 +55,11 @@ const ClientCompleteOrderList = ()=>{
 
     const sendRating = async(myrating)=>{
 
-        if(location.state.role ==="Client"){
+    if(location.state.role ==="Client"){
         const acceptData ={ email:email,  myrating: myrating} 
         // console.log(acceptData);
         await axios.post("http://localhost:8000/RatingsSend" , acceptData);
     }
-    
     else if(location.state.role ==="Influencer"){
         const acceptData ={ email:email,  myrating: myrating} 
         console.log("is it over here ?");
@@ -91,6 +94,30 @@ const ClientCompleteOrderList = ()=>{
 
                                     <button onClick={()=>{SetRating(val.orderID)}}>Click here after Rating selected !!!</button> 
                                     <br></br>
+                                    Adding Stars method <br></br>
+                                    {/* <span className="star">&#9733;</span>
+                                    <span className="star">&#9733;</span>
+                                    <span className="star">&#9733;</span>
+                                    <span className="star">&#9733;</span>
+                                    <span className="star">&#9733;</span> */}
+                                    {/* <div className="star-rating">
+                                    {[...Array(5)].map((star, index) => {
+                                        index += 1;
+                                        return (
+                                        <button
+                                            type="button"
+                                            key={index}
+                                            className={index <= (hover || rating) ? "on" : "off"}
+                                            onClick={() => setRating(index)}
+                                            onMouseEnter={() => setHover(index)}
+                                            onMouseLeave={() => setHover(rating)}
+                                        >
+                                            <span className="star">&#9733;</span>
+                                        </button>
+                                        );
+                                    })}
+                                    </div> */}
+
                                 
                                 </div>
                             </div>
