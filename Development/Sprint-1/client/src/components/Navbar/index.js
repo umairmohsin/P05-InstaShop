@@ -28,6 +28,10 @@ const Navbar = () => {
     await axios.get('http://localhost:8000/logout', {withCredentials: true})
     navigate('/')  
   }
+
+  const home = () => {
+    navigate('/home', {state:{role:location.state.role, email:location.state.email}})
+  }
   
   if(role && role == "Admin") {
     return (
@@ -51,7 +55,7 @@ const Navbar = () => {
             </NavLink>
           </NavMenu>
           <NavBtn>
-            <NavBtnLink onClick={logout}>Sign Out</NavBtnLink>
+            <NavBtnLink onClick={logout} to='/'>Sign Out</NavBtnLink>
           </NavBtn>
         </Nav>
     );
@@ -82,7 +86,7 @@ const Navbar = () => {
             </NavLink>
           </NavMenu>
           <NavBtn>
-            <NavBtnLink onClick={logout}>Sign Out</NavBtnLink>
+            <NavBtnLink onClick={logout} to='/'>Sign Out</NavBtnLink>
           </NavBtn>
         </Nav>
     );
@@ -110,7 +114,7 @@ const Navbar = () => {
             </NavLink>
           </NavMenu>
           <NavBtn>
-            <NavBtnLink onClick={logout}>Sign Out</NavBtnLink>
+            <NavBtnLink onClick={logout} to='/'>Sign Out</NavBtnLink>
           </NavBtn>
         </Nav>
     );

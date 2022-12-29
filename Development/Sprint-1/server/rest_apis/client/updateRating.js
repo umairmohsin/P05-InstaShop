@@ -2,7 +2,7 @@ const sanitize = require("mongo-sanitize")
 const mongoose = require("mongoose")
 
 const updateRating =async(req,res)=>{
-    console.log(req.body)
+    // console.log(req.body)
     try{
 
         const result = await mongoose.connection.db.collection('orders').findOneAndUpdate({"orderID":req.body.myID},{
@@ -10,7 +10,7 @@ const updateRating =async(req,res)=>{
                 "ratingGiven":req.body.ans
             }
         })
-        console.log(result)
+        // console.log(result)
 
     }catch(err){
         console.log(err)

@@ -5,14 +5,14 @@ const Client = require('../../database/Schema/Client')
 
 async function getRating(req, res){
     
-    console.log(req.body)
+    // console.log(req.body)
     try{
         const result = await mongoose.connection.db.collection('clients').find({"rating":req.body.rating},{
             $set:{
                 "rating":req.body.ans
             }
         })
-        console.log(result)
+        // console.log(result)
     }catch(err){
         console.log(err)
     }

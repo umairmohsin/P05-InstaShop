@@ -12,8 +12,14 @@ const HomePage = ()=>{
   const location = useLocation()
 
   const [allProfiles, setAllProfiles] = useState([])
-  const role = location.state.role
+  
+  console.log("Location is: ", location)
 
+  let role = ""
+  if (location.state !== null){
+    role = location.state.role
+  }
+  
   
   useEffect( () => {
     if (role === "Client"){

@@ -8,6 +8,8 @@ import { useState } from 'react'
 // const shapack = require("../../../server/database/Schema/Announcement")
 const ClientJobOffers = ()=>{
     const location = useLocation()
+
+    console.log("Location in client offer: ", location)
     const email = location.state.email
 
         // e.preventDefault();
@@ -39,7 +41,7 @@ const ClientJobOffers = ()=>{
         <div>
         {
             <div className='ipa'>
-                <h2>Here are your job offers received from Clients</h2>
+                <h2>Here are your job offers sent to influencers</h2>
                 {
                     newpendlist.map((val,key)=>{
                         return(

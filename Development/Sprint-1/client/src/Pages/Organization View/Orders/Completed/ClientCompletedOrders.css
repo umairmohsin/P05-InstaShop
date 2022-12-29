@@ -1,8 +1,18 @@
-.ico{
+.cco{
     text-align: center;
     align-items: center;
     justify-content: center;
     color: white;
+}
+
+.left{
+    width: 70%;
+    float: left;
+}
+
+.right{
+    width: 30%;
+    float: right;
 }
 
 .clientCompletedOrderCard {
@@ -17,4 +27,28 @@
     color: white;
     border-radius: 0.5rem;
     height: 9rem;
+    margin-bottom: 3rem;
+}
+
+.ccorating{
+    position: relative;
+    margin-top: 0.2rem;
+    right: 10%;
+    width: 51%;
+    background-color: #F47458;
+    color: white;
+    border-radius: 0.5rem;
+    height: 1.75rem;
+}
+
+.ccoratingconfirm{
+    position: relative;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+    right: 10%;
+    width: 51%;
+    background-color: #F47458;
+    color: white;
+    border-radius: 0.5rem;
+    height: 1.75rem;
 }
