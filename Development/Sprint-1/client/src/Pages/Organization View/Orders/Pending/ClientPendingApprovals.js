@@ -38,7 +38,6 @@ const ClientApprovalsPending = ()=>{
         const acceptData = {ans:true, email:email, myID:myID}
         // console.log(acceptData)
         await axios.post("http://localhost:8000/changeAccepted",acceptData)
-
     }
     const setStatus = async(myID)=>{
         const acceptData = {ans:"Ongoing", email:email, myID:myID}

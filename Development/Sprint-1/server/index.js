@@ -31,6 +31,11 @@ const { updateStatus } = require('./rest_apis/client/changeStatusToOngoing.js')
 const { placeOrder } = require('./rest_apis/client/placeOrder')
 
 
+// Rating
+const{updateRating} = require('./rest_apis/client/updateRating.js')
+const{getRating} = require('./rest_apis/client/getRating.js')
+const{sendRating} = require('./rest_apis/client/RatingSend')
+
 const PORT = process.env.PORT || 8000
 
 app.use(express.json())
@@ -101,6 +106,22 @@ app.post('/changeStatus',async(req,res)=>{
 app.post('/placeOrder', async(req,res)=>{
     await placeOrder(req,res)
 })
+
+
+// Rating Stars and Order marks
+app.post('/RatingAccepted',async(req,res)=>{  //Order is marked true when updated status
+    await updateRating(req,res)
+})
+app.get('/GetRatingClient' , async(req,res)=>{
+    await getRating(req,res)
+})
+
+app.post('/RatingsSend', async(req,res)=>{
+    await sendRating(req,res)
+})
+
+
+
 
 //Influencer Profile
 // app.get('/getInfluencerProfile' , (authenticateUser) , async(req,res) =>{

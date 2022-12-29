@@ -30,6 +30,10 @@ import InfluencerApprovalsPending from "./Pages/Endorsee View/Orders/Pending/Inf
 import InfluencerCompleteOrderList from "./Pages/Endorsee View/Orders/Completed/InfluencerCompletedOrders";
 import RejectedJobOffer from "./Pages/Endorsee View/Orders/Rejected/RejectedJobOffer"
 
+
+import RatingList from "./Pages/Organization View/Orders/Completed/RatingComp";
+
+
 const App = ()=>{
   return(
     <div>
@@ -60,6 +64,11 @@ const App = ()=>{
           <Route path="/influencerPendingApprovals" element={(<InfluencerApprovalsPending />)}/>
           <Route path="/influencerCompletedOrders" element={(<InfluencerCompleteOrderList />)}/>
           <Route path="/influencerRejectedOrders" element={(<RejectedJobOffer />)}/>
+
+
+          <Route path="/clientRatings" element={(<RatingList />)}/>
+
+
 
         </Routes>
       </Router>

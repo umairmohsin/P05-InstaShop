@@ -35,6 +35,27 @@ const ClientCompleteOrderList = ()=>{
     }
     myfunc()
     // shapack();
+    const SetRating = async(myID)=>{
+        const acceptData = {ans:true, email:email, myID:myID } 
+        await axios.post("http://localhost:8000/RatingAccepted",acceptData)
+        console.log(myID)
+    }
+    const api_url = "http://localhost:8000/GetRatingClient";
+
+    async function GetRatingDB(url){
+        const response = await fetch(url);
+        var data = await response.json();
+        console.log(data);
+        }
+    GetRatingDB(api_url);
+
+    const sendRating = async(myrating)=>{
+        const acceptData ={ email:email,  myrating: myrating} 
+        // console.log(acceptData);
+        await axios.post("http://localhost:8000/RatingsSend" , acceptData);
+    }
+
+
     return(
         <div>
         {
@@ -49,6 +70,19 @@ const ClientCompleteOrderList = ()=>{
                                     <p>Client Email: {JSON.parse(JSON.stringify(val,undefined,3)).clientEmail}</p>
                                     <p>Price: PKR{JSON.parse(JSON.stringify(val,undefined,3)).price}</p>
                                     <p>Status: {JSON.parse(JSON.stringify(val,undefined,3)).status}</p>
+
+                                    {/* <p>Rating Backend: {GetRatingDB}</p> */}
+                                    {/* SendRating pass values to check if updated in DB  */}
+                                    <br></br>
+                                    <button onClick={sendRating} type="radio" name="stars" value="1">1 </button>
+                                    <button onClick={sendRating} type="radio" name="stars" value="2">2 </button>
+                                    <button onClick={sendRating} type="radio" name="stars" value="3">3 </button>
+                                    <button onClick={sendRating} type="radio" name="stars" value="4">4 </button>
+                                    <button onClick={sendRating} type="radio" name="stars" value="5">5 </button>
+
+                                    <button onClick={()=>{SetRating(val.orderID)}}>Click here after Rating selected !!!</button> 
+                                    <br></br>
+                                
                                 </div>
                             </div>
                         )
