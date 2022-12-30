@@ -1,0 +1,61 @@
+.landing {
+  display: flex;
+  background-image: url('../../images/landingbg.png');
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  min-height: 110vh;
+}
+
+.logo {
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+
+.landingarea {
+  text-align: left;
+  width: 27rem;
+  height: 25rem;
+  margin-left: -25rem;
+}
+
+.logo1 {
+  width: 100%;
+}
+
+.motto {
+  font-family: Medium;
+  color: white;
+  font-size: 1.3rem;
+  margin-top: -1.5rem;
+}
+
+.landingbuttons {
+  position: relative;
+  margin-top: 0.8rem;
+  margin-right: 1.5rem;
+  background-color: #F47458;
+  height: 2.5rem;
+  width: 30%;
+  color: white;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 0.15rem;
+  font-family: semibold;
+}
+
+@font-face {
+  font-family: "SemiBold";
+  src: local("Poppins-SemiBold"),
+    url("../../fonts/Poppins-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Medium";
+  src: local("Poppins-Medium"),
+    url("../../fonts/Poppins-Medium.ttf") format("truetype");
+}

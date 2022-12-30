@@ -1,0 +1,102 @@
+.signup {
+  display: flex;
+  background-color: #2c3333;
+  background-image: url('../../images/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  min-height: 110vh;
+}
+
+.logo {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.signuparea {
+  text-align: left;
+  width: 27rem;
+  height: 25rem;
+}
+
+.signupmsg {
+  position: relative;
+  top: 1.75rem;
+  font-family: semibold;
+  color: white;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.signuptitle {
+  font-family: semibold;
+  color: white;
+  font-size: 2.4rem;
+}
+
+.signupinput1 {
+  float: left;
+  margin-bottom: 0.625rem;
+  position: relative;
+  background-color: #395B64;
+  height: 2.5rem;
+  width: 48%;
+  color: white;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 0.15rem;
+  font-family: semibold;
+}
+
+.signupinput2 {
+  margin-bottom: 0.625rem;
+  float: right;
+  background-color: #395B64;
+  height: 2.5rem;
+  width: 48%;
+  color: white;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 0.15rem;
+  font-family: semibold;
+}
+
+.signupbuttons {
+  position: relative;
+  margin-top: 0.8rem;
+  background-color: #F47458;
+  height: 2.5rem;
+  width: 100%;
+  color: white;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 0.15rem;
+  font-family: semibold;
+}
+
+.signupbottom1 {
+  margin-top: 0.5rem;
+  float: right;
+  font-family: Regular;
+  color: white;
+  font-size: 0.8rem;
+}
+
+.signupOptions {
+  color: white;
+}
+
+@font-face {
+  font-family: "SemiBold";
+  src: local("Poppins-SemiBold"),
+    url("../../fonts/Poppins-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Regular";
+  src: local("Poppins-Regular"),
+    url("../../fonts/Poppins-Regular.ttf") format("truetype");
+}

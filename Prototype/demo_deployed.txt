@@ -1,2 +1,0 @@
-Prototype Deployed link :
-https://colleasydemo.herokuapp.com/

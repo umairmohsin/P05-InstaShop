@@ -1,0 +1,79 @@
+.cardspace {
+    width: 100%;
+    display: flex;
+}
+
+.card {
+    width: 18%;
+    height: 14rem;
+    background-color: #395B64;
+    border-radius: 0.3rem;
+    margin: 1rem;
+}
+
+.top {
+    width: 100%;
+    height: 3rem;
+    background-color: #F47458;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+    text-align: center;
+}
+
+.watermark {
+    width: 65%;
+    opacity: 0.3;
+}
+
+.heads {
+    width: 55%;
+    float: left;
+}
+
+.pp {
+    margin-top: -2rem;
+    margin-left: 0.2rem;
+    width: 30%;
+}
+
+.name {
+    font-family: SemiBold;
+    color: white;
+    font-size: 1.5rem;
+    margin-left: 0.2rem;
+    margin-top: -0.75rem;
+}
+
+.age {
+    font-family: SemiBold;
+    color: white;
+    font-size: 0.75rem;
+    margin-left: 0.2rem;
+    margin-top: -1.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.writing {
+    font-family: Regular;
+    color: white;
+    font-size: 0.75rem;
+    margin-left: 0.2rem;
+    margin-top: -0.75rem;
+}
+
+.infos {
+    width: 40%;
+    float: right;
+}
+
+@font-face {
+    font-family: "SemiBold";
+    src: local("Poppins-SemiBold"),
+      url("../../../fonts/Poppins-SemiBold.ttf") format("truetype");
+  }
+  
+@font-face {
+font-family: "Regular";
+src: local("Poppins-Regular"),
+    url("../../../fonts/Poppins-Regular.ttf") format("truetype");
+}
